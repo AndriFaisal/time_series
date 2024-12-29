@@ -270,8 +270,15 @@ Estimasi model persamaan ragam
 <span class="math display">\[ Z_t=V_t √(α_0+α_1 Z_(t-1)^2 )\]</span> dengan nilai α0 &gt; 1 dan 0&lt;α1&lt;1</p>
 <p>pengujian estimasi error pengujian keacakan residual dan efek ARCH</p>
 <p>Peramalan menggunakan peramalan terbaik dengan menggunakan RMSE MAE dan MAPE</p>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="arch-model.html#cb60-1" tabindex="-1"></a><span class="fu">library</span>(FinTS)</span>
-<span id="cb60-2"><a href="arch-model.html#cb60-2" tabindex="-1"></a><span class="fu">ArchTest</span>(<span class="fu">residuals</span>(modelarimalynx))</span></code></pre></div>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="arch-model.html#cb79-1" tabindex="-1"></a><span class="fu">library</span>(FinTS)</span></code></pre></div>
+<pre><code>## Warning: package &#39;FinTS&#39; was built under R version
+## 4.3.1</code></pre>
+<pre><code>## 
+## Attaching package: &#39;FinTS&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:forecast&#39;:
+## 
+##     Acf</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="arch-model.html#cb83-1" tabindex="-1"></a><span class="fu">ArchTest</span>(<span class="fu">residuals</span>(modelarimalynx))</span></code></pre></div>
 <pre><code>## 
 ##  ARCH LM-test; Null hypothesis: no ARCH effects
 ## 
@@ -289,22 +296,22 @@ Estimasi model persamaan ragam
 <li><p>Prediksi atau forecast menngunakan rugarch</p></li>
 </ol>
 <p>KIta akan terapkan pada data Air Passenger yang ada di sana</p>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="arch-model.html#cb62-1" tabindex="-1"></a><span class="co"># Data EuStockMarkets</span></span>
-<span id="cb62-2"><a href="arch-model.html#cb62-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;EuStockMarkets&quot;</span>)</span>
-<span id="cb62-3"><a href="arch-model.html#cb62-3" tabindex="-1"></a></span>
-<span id="cb62-4"><a href="arch-model.html#cb62-4" tabindex="-1"></a><span class="co"># Ambil salah satu indeks saham, misalnya DAX (Jerman)</span></span>
-<span id="cb62-5"><a href="arch-model.html#cb62-5" tabindex="-1"></a>dax <span class="ot">&lt;-</span> EuStockMarkets[, <span class="st">&quot;DAX&quot;</span>]</span>
-<span id="cb62-6"><a href="arch-model.html#cb62-6" tabindex="-1"></a></span>
-<span id="cb62-7"><a href="arch-model.html#cb62-7" tabindex="-1"></a><span class="co"># Plot data</span></span>
-<span id="cb62-8"><a href="arch-model.html#cb62-8" tabindex="-1"></a><span class="fu">plot</span>(dax, <span class="at">main =</span> <span class="st">&quot;DAX Index&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Price&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="arch-model.html#cb85-1" tabindex="-1"></a><span class="co"># Data EuStockMarkets</span></span>
+<span id="cb85-2"><a href="arch-model.html#cb85-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;EuStockMarkets&quot;</span>)</span>
+<span id="cb85-3"><a href="arch-model.html#cb85-3" tabindex="-1"></a></span>
+<span id="cb85-4"><a href="arch-model.html#cb85-4" tabindex="-1"></a><span class="co"># Ambil salah satu indeks saham, misalnya DAX (Jerman)</span></span>
+<span id="cb85-5"><a href="arch-model.html#cb85-5" tabindex="-1"></a>dax <span class="ot">&lt;-</span> EuStockMarkets[, <span class="st">&quot;DAX&quot;</span>]</span>
+<span id="cb85-6"><a href="arch-model.html#cb85-6" tabindex="-1"></a></span>
+<span id="cb85-7"><a href="arch-model.html#cb85-7" tabindex="-1"></a><span class="co"># Plot data</span></span>
+<span id="cb85-8"><a href="arch-model.html#cb85-8" tabindex="-1"></a><span class="fu">plot</span>(dax, <span class="at">main =</span> <span class="st">&quot;DAX Index&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Price&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="arch-model.html#cb63-1" tabindex="-1"></a><span class="co"># Hitung log-return untuk membuat data stasioner</span></span>
-<span id="cb63-2"><a href="arch-model.html#cb63-2" tabindex="-1"></a>dax_return <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">log</span>(dax))  <span class="co"># Logarithmic return</span></span>
-<span id="cb63-3"><a href="arch-model.html#cb63-3" tabindex="-1"></a><span class="fu">plot</span>(dax_return, <span class="at">main =</span> <span class="st">&quot;Log Return of DAX&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Log Return&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="arch-model.html#cb86-1" tabindex="-1"></a><span class="co"># Hitung log-return untuk membuat data stasioner</span></span>
+<span id="cb86-2"><a href="arch-model.html#cb86-2" tabindex="-1"></a>dax_return <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">log</span>(dax))  <span class="co"># Logarithmic return</span></span>
+<span id="cb86-3"><a href="arch-model.html#cb86-3" tabindex="-1"></a><span class="fu">plot</span>(dax_return, <span class="at">main =</span> <span class="st">&quot;Log Return of DAX&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Log Return&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-19-2.png" width="672" /></p>
 <p>dalam analsisi ini kita bisa membuat evaluasi model tersebt karena hal itu dapat untuk membuat kita yakin dengan hasil yang kta peroleh.</p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="arch-model.html#cb64-1" tabindex="-1"></a><span class="co"># Uji ADF</span></span>
-<span id="cb64-2"><a href="arch-model.html#cb64-2" tabindex="-1"></a><span class="fu">adf.test</span>(dax_return, <span class="at">alternative =</span> <span class="st">&quot;stationary&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="arch-model.html#cb87-1" tabindex="-1"></a><span class="co"># Uji ADF</span></span>
+<span id="cb87-2"><a href="arch-model.html#cb87-2" tabindex="-1"></a><span class="fu">adf.test</span>(dax_return, <span class="at">alternative =</span> <span class="st">&quot;stationary&quot;</span>)</span></code></pre></div>
 <pre><code>## Warning in adf.test(dax_return, alternative =
 ## &quot;stationary&quot;): p-value smaller than printed p-value</code></pre>
 <pre><code>## 
@@ -315,21 +322,33 @@ Estimasi model persamaan ragam
 ## = 0.01
 ## alternative hypothesis: stationary</code></pre>
 <p>setelah itu kita bisa melakukan untuk pemodelan model GARCH seperti</p>
-<div class="sourceCode" id="cb67"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb67-1"><a href="arch-model.html#cb67-1" tabindex="-1"></a><span class="fu">library</span>(rugarch)</span>
-<span id="cb67-2"><a href="arch-model.html#cb67-2" tabindex="-1"></a><span class="fu">library</span>(tseries)</span>
-<span id="cb67-3"><a href="arch-model.html#cb67-3" tabindex="-1"></a><span class="fu">library</span>(quantmod)</span>
-<span id="cb67-4"><a href="arch-model.html#cb67-4" tabindex="-1"></a><span class="co"># Definisikan spesifikasi model GARCH(1,1)</span></span>
-<span id="cb67-5"><a href="arch-model.html#cb67-5" tabindex="-1"></a>garch_spec <span class="ot">&lt;-</span> <span class="fu">ugarchspec</span>(</span>
-<span id="cb67-6"><a href="arch-model.html#cb67-6" tabindex="-1"></a>  <span class="at">variance.model =</span> <span class="fu">list</span>(<span class="at">model =</span> <span class="st">&quot;sGARCH&quot;</span>, <span class="at">garchOrder =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)),</span>
-<span id="cb67-7"><a href="arch-model.html#cb67-7" tabindex="-1"></a>  <span class="at">mean.model =</span> <span class="fu">list</span>(<span class="at">armaOrder =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">include.mean =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb67-8"><a href="arch-model.html#cb67-8" tabindex="-1"></a>  <span class="at">distribution.model =</span> <span class="st">&quot;norm&quot;</span>  <span class="co"># Distribusi error normal</span></span>
-<span id="cb67-9"><a href="arch-model.html#cb67-9" tabindex="-1"></a>)</span>
-<span id="cb67-10"><a href="arch-model.html#cb67-10" tabindex="-1"></a></span>
-<span id="cb67-11"><a href="arch-model.html#cb67-11" tabindex="-1"></a><span class="co"># Estimasi model GARCH</span></span>
-<span id="cb67-12"><a href="arch-model.html#cb67-12" tabindex="-1"></a>garch_fit <span class="ot">&lt;-</span> <span class="fu">ugarchfit</span>(<span class="at">spec =</span> garch_spec, <span class="at">data =</span> dax_return)</span>
-<span id="cb67-13"><a href="arch-model.html#cb67-13" tabindex="-1"></a></span>
-<span id="cb67-14"><a href="arch-model.html#cb67-14" tabindex="-1"></a><span class="co"># Ringkasan hasil estimasi</span></span>
-<span id="cb67-15"><a href="arch-model.html#cb67-15" tabindex="-1"></a><span class="fu">print</span>(garch_fit)</span></code></pre></div>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="arch-model.html#cb90-1" tabindex="-1"></a><span class="fu">library</span>(rugarch)</span></code></pre></div>
+<pre><code>## Warning: package &#39;rugarch&#39; was built under R version
+## 4.3.3</code></pre>
+<pre><code>## Loading required package: parallel</code></pre>
+<pre><code>## 
+## Attaching package: &#39;rugarch&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:stats&#39;:
+## 
+##     sigma</code></pre>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="arch-model.html#cb95-1" tabindex="-1"></a><span class="fu">library</span>(tseries)</span>
+<span id="cb95-2"><a href="arch-model.html#cb95-2" tabindex="-1"></a><span class="fu">library</span>(quantmod)</span></code></pre></div>
+<pre><code>## Warning: package &#39;quantmod&#39; was built under R version
+## 4.3.1</code></pre>
+<pre><code>## Loading required package: TTR</code></pre>
+<pre><code>## Warning: package &#39;TTR&#39; was built under R version 4.3.1</code></pre>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="arch-model.html#cb99-1" tabindex="-1"></a><span class="co"># Definisikan spesifikasi model GARCH(1,1)</span></span>
+<span id="cb99-2"><a href="arch-model.html#cb99-2" tabindex="-1"></a>garch_spec <span class="ot">&lt;-</span> <span class="fu">ugarchspec</span>(</span>
+<span id="cb99-3"><a href="arch-model.html#cb99-3" tabindex="-1"></a>  <span class="at">variance.model =</span> <span class="fu">list</span>(<span class="at">model =</span> <span class="st">&quot;sGARCH&quot;</span>, <span class="at">garchOrder =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)),</span>
+<span id="cb99-4"><a href="arch-model.html#cb99-4" tabindex="-1"></a>  <span class="at">mean.model =</span> <span class="fu">list</span>(<span class="at">armaOrder =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">include.mean =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb99-5"><a href="arch-model.html#cb99-5" tabindex="-1"></a>  <span class="at">distribution.model =</span> <span class="st">&quot;norm&quot;</span>  <span class="co"># Distribusi error normal</span></span>
+<span id="cb99-6"><a href="arch-model.html#cb99-6" tabindex="-1"></a>)</span>
+<span id="cb99-7"><a href="arch-model.html#cb99-7" tabindex="-1"></a></span>
+<span id="cb99-8"><a href="arch-model.html#cb99-8" tabindex="-1"></a><span class="co"># Estimasi model GARCH</span></span>
+<span id="cb99-9"><a href="arch-model.html#cb99-9" tabindex="-1"></a>garch_fit <span class="ot">&lt;-</span> <span class="fu">ugarchfit</span>(<span class="at">spec =</span> garch_spec, <span class="at">data =</span> dax_return)</span>
+<span id="cb99-10"><a href="arch-model.html#cb99-10" tabindex="-1"></a></span>
+<span id="cb99-11"><a href="arch-model.html#cb99-11" tabindex="-1"></a><span class="co"># Ringkasan hasil estimasi</span></span>
+<span id="cb99-12"><a href="arch-model.html#cb99-12" tabindex="-1"></a><span class="fu">print</span>(garch_fit)</span></code></pre></div>
 <pre><code>## 
 ## *---------------------------------*
 ## *          GARCH Model Fit        *
@@ -421,11 +440,11 @@ Estimasi model persamaan ragam
 ## 4    50    193.10    5.368e-19
 ## 
 ## 
-## Elapsed time : 0.6244581</code></pre>
+## Elapsed time : 0.405793</code></pre>
 <p>Kemudian baru kita evaluasi model tersebut adalah dengan beberapa grafik yang ada. Dalam grafik ini diberikan</p>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="arch-model.html#cb69-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>))  <span class="co"># Format: c(bawah, kiri, atas, kanan)</span></span>
-<span id="cb69-2"><a href="arch-model.html#cb69-2" tabindex="-1"></a><span class="co"># Plot residual standar</span></span>
-<span id="cb69-3"><a href="arch-model.html#cb69-3" tabindex="-1"></a><span class="fu">plot</span>(garch_fit, <span class="at">which =</span> <span class="st">&quot;all&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="arch-model.html#cb101-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>))  <span class="co"># Format: c(bawah, kiri, atas, kanan)</span></span>
+<span id="cb101-2"><a href="arch-model.html#cb101-2" tabindex="-1"></a><span class="co"># Plot residual standar</span></span>
+<span id="cb101-3"><a href="arch-model.html#cb101-3" tabindex="-1"></a><span class="fu">plot</span>(garch_fit, <span class="at">which =</span> <span class="st">&quot;all&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ## please wait...calculating quantiles...</code></pre>
 <p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>

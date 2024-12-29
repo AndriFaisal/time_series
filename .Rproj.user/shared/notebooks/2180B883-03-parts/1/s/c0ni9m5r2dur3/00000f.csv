@@ -1,0 +1,52 @@
+"0","library(forecast)"
+"2","Warning: package ‘forecast’ was built under R version 4.3.1"
+"2","Registered S3 method overwritten by 'quantmod':
+  method            from
+  as.zoo.data.frame zoo 
+"
+"2","This is forecast 8.21 
+  Crossvalidated is a great place to get help on forecasting issues:
+  http://stats.stackexchange.com/tags/forecasting.
+"
+"0","library(tseries)"
+"2","Warning: package ‘tseries’ was built under R version 4.3.1"
+"2","
+    ‘tseries’ version: 0.10-54
+
+    ‘tseries’ is a package for time
+    series analysis and computational
+    finance.
+
+    See ‘library(help=""tseries"")’ for
+    details.
+
+"
+"0","adf.test(lynx)"
+"2","Warning: p-value smaller than printed p-value"
+"1","
+"
+"1","	Augmented Dickey-Fuller Test"
+"1","
+"
+"1","
+"
+"1","data:  "
+"1",""
+"1","lynx"
+"1",""
+"1","
+"
+"1","Dickey-Fuller = -6.3068, Lag order = 4,"
+"1","
+"
+"1","p-value = 0.01"
+"1","
+"
+"1","alternative hypothesis: "
+"1","stationary"
+"1",""
+"1","
+"
+"1","
+"
+"0","acf(lynx,lag=100)"

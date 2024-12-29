@@ -1,0 +1,5 @@
+"0",""
+"0","# Hitung log-return untuk membuat data stasioner"
+"0","dax_return <- diff(log(dax))  # Logarithmic return"
+"0","plot(dax_return, main = ""Log Return of DAX"", col = ""red"", ylab = ""Log Return"")"
+"0",""

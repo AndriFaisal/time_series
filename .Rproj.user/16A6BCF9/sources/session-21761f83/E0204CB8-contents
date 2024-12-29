@@ -1,0 +1,661 @@
+# Pendahuluan 
+
+Ada suatu pameo waktu hari ini adalah menetukan hari esok san hari ini adalah hari hasil dari hari yang lalu atau kemarin. Tentu ini adalah suatu keyakinan dalam diri masing-masing individu. Apa yang kita kerjakan hari ini mungkin dapat merubah hal yang belum kita capai hari ini.Seberapa capaian kita hari ini juga mungkin itu karena kerja kita di masa yang lalu. 
+Manusia boleh berenencana tetapi Allah lah yang menetukan. Nah bicara rencana kita juga harus berencana untuk mendapatkan hasil yang maksimal. Rencana akan membantu kita mendapatkan tujuan apa yang kita inginkan. 
+Ada dua peramalan berdasarkan time series dan ekonometrik. Kalau berdasarkan time series terjadi karena data masa lampua merefleksikan data masa depan. 
+Penentuan metode daripada forecast bergantung dengan type data. ^[@Majid2018] ternyata untuk meramal dengan menggunakan smooth ekstra polating. Ramalan ini mengguanakan data waktu berkala atau data time series. Data yang diumpulkan berdasarkan urutan waktu dari variabel yang satu. Kita menuju kembali kalau dalam suatau varibel adalah karakterisitik dari sample. 
+Data dari time series itu berasal dari organisasi seperti Badan Pusat Statistik yang menerbitkan pendapatan domestik dari negara ini. Sebagai badan yang mengurusi masalah data BPS menyimpan begitu banyak data tersebut. 
+Bagi statistikawan data-data tersebut sangat berguna. Hanya orang awam yang tidak mengindahkan adanya begitu banya tawanan. Dengan adanya data kita menjadi tahu. Kita bisa menggunakan data dengan adanya rencana. Negeri yang mau menyejahterakan rakyatnya harus memerlukan banyak data untuk memenuhi kebutuhan masyarakat dan memajukan negaranya. 
+
+## Semua antisipasi
+
+Seperti contoh diatas apakah yang anda lalukan ketika harag emas lima bulan kemudian naik dua kali. Setiap orang akan menahan emas dan yang ada akan membeli emas. Efek informasi membuat seseorang untuk mengantisipasi informasi yang sudah tersebar keseluruh publik.  Semua orang berpikir bahwa apa yang akan mereka dadapi dengan strategi yang sudah ada. 
+Kalau secara logis mereka yang mengetahui harga akan naik maka mereka akan menahan lebih banyak dan permintaan emas akan banyak sehingga justru harga emas akan naik bukan lima bukan ke depan melainkan lima hari setelah adanya informasi tersebut. Dengan harganya semakin meningkat maka akan ada dua kemungkinan. Kalau yang memang sedang membutuhkan uang akan menjual emas tersebut namun yang tidak butuh-butuh amat akan tetap mempertahanakan emas tersebut dan mungkin tidak akan menjual hingga lima bulan kemudian. Bagi spekulan ia menunggu untuk melihat kapan waktunya. 
+Ia pikir dengan lima bulan kemudian emas akan begitu menarik hingga pada harga yang tidak masuk akal atau 10 kali lipat dari sebelumnya, Tetapi ternyata tidak karena harga sudah kepayahan pada saat dua bulan pertama sejak ada peramalan. Hal ini adalah karena hasil dari antisipasi. Dengan harga yang melonjak begitu besar maka orang yang mau membeli bisa jadi tidak akan membeli emas walau ia yakin juga beberapa bulan ke depan harga emas akan naik. Keterbatasan dari modal membuat mereka terdiam atau tidak melakukan aksi untuk menjual emas. 
+Bagi yang tidak punya uang maka ia menjual emasnya dan mungkin diikuti gerakan menjual emas oleh beberapa orang sehingga harga emas akan tumbang dalam waktu tersebut. Adanya gerakan tersebut membuat orang ragu dengan hal yang sudah di publish tersebut. Tentu sebagian masih percaya debgfab ramalan tersebut tetapi apakah semua orang percaya dengab hal tersebut. Rumor yang lain menyebabkan harga emas sedikit turun karena di pasar dengan temuan tambang yang baru atau di tempat lain sedang mengalami kesulitan likuiditas sehingga menjual emasnya kepada negeri lain. Kemudian harga emas turun menurun kembali. Para spekulan dengan adanya temuan emas ini dan mereka segera menjual keburu belum hancur harganya Mereka sebenarya sudah rugi karena mereka membelinya dengan harga yang mahal. Emas memang tidak akan nilainya nol meski sesulit apapaun namun dapat turun walau turunnya tidak besar namun spekulasi yang menggunakan dana besar membeli emas banyak sudah rugi banyak dengan hal tersebut. 
+Hal yang paling ekstrim terjadi di pasar modal. Sebagian besar atau mayoritas pelaku pasar akan menggunakan peramlaan. Mereka mengumpulkan dan membuat peramalan akan data menggunakan data lampau *historical data*. Mereka yakin dengan hal itu. Hanya saja yang dapat meramal saham di tempat itu tidak satu. Hampir semuanya dapat meramal saham. NAgkana katanya merena bisa untuk menilai mana penuruna dan kenaikan yang asli.
+
+
+Kesalahan peramalan 
+Sudah menjadi jamianan tidak ada ramalan yang 100% karena kalau ada yang bisa meramal sedemikian akurat maka ia adalah orang yang penguasa di alam ini. Dengan memiliki data yang akurat begitu ia bisa mengumpulkan banyak uang dan menjadi berkuasa di muka bumi ini. 
+Persoalan peramalan adalah meleset atau tingkat kesalahan *(error)*. Ada peramalan yang sama sekali tidak membantu karena tingkat kesalahan begitu besar sekali. Ketika sudah terjadi peramalan tersebut atau waktu yang diramalakn sudah datang maka nilai tersebut berbeda dnegan nilai peramalan. Misalnya harga peramalan sekitar 3000 namun yang terjadi adalah 600 malah harga menjadi turun sehingga si investor yang mempercayai ramalan tersebut rugi berlipat. Akan tetapi ketika harga itu malah naik lebih besar dari ramalan maka itu menjadi suatu kebahagian sendiri. 
+Akan tetapi peramalan yang salah akan mendatangkan kerugian yang banyak bagi prang yang menggunakan data tersebut *(user)*. Hal yang benar adalah mencari bentuk peramalan yang mendekati dengan kenyataan atau yang paling mendekati dengan kenyataan. 
+Sudah beberapa banyak metode yang dikembangnkan dengan kecanggihan ilmu komputer dan berkembangnya ilmu stataitik yang ada sekarang ini. Penghitungan dari angka dengan menggunalan kompuetr memang dapat mengurangi dari kesalahan dari peramalan namun tetap saja peramalan itu akan selalu menghasilkan kesalahan. 
+Tidak semua data yang ada mempunyai sifat yang sama. Oleh karena itu metode yang ada tidak bisa diaplikasikan kepada data time series semunya. Untuk itu kita memahami dari data time series tersebut. Bisa jadi suatu data cocok untuk metode A akan tetapi tidak cocok dengan suatu data 
+Data time series adalah data yang menurut pencatatan deret waktu. Maka kita perlu untuk membuat data stationer. Data stationer adalah data dimana situasi yang terjadi ketika terjadi sesuatu yang
+
+## Jangka waktu Peramalan 
+Peramalaan adalah sesuatu yang tidak pasti. Tentu ada penyimpangan dalam melakukan peramalan. Ketika penggunaan untuk jangka waktu yang pendek bukan menjadi masalah yang besar. Setiap orang bisa meramal apa yang terjadi pada minggu depan. Apakah ia akan berubah nasibnya. Mungkin ia akan tahu bahwa nasibnya tidak akan berubah dalam waktu yang pendek. Kalau ia optimispun ia akan yakin bahwa perubahan itu akan perlahan bisa dalam waktu 1-2 tahun. 
+Begitu juga setiap orang yang akan merubah dalam beberapa waktu pasti akan mudah sekali. Misalnya, harga bahan bakar untuk bulan ini tidak akan naik begitu saja. Hal itu dapat dilihat dari keadaan ekonomi makro dunia yang tidak menunjukkan perubahan dalam peramalan harga dalam waktu dekat tersebut. Peristiwa yang penting tidak ada yang dapat merubah karena sepertinya keadaan tidak dapat. 
+Hal itu berlainan kalau yang terjadi di masa yang sangat lama sekali . Perubahan berjalan dengan lamban sehingga pada puncaknya mengalami sesuatu yang sangat ekstrim sekali 
+
+## Persiapan Data Rstudio 
+
+Mengelola data dalam RStudio cukup unik. Kalau software berbayar kita hanya mengimpor data dari data yang sudah ada dalam bentuk excel, csv atau text. Ketika kita mengimpor data dari file tersebut kita tinggal mengolah data tersebut. 
+RStudio tentu berbeda dengan lainnya ia harus mengimpor data bisa dalam bentuk excel, csv, atau txt akan tetapi data dalam bentuk data.frame. Model atau tipe data frame yang ada di R tidak akan bisa diolah dalam bentuk time series. Untuk itu, data.frame yang sudah ada dibuatkan terlebih dahulu data frame. 
+Setidaknya ada beberapa cara namun di artikel kali ini :
+1.	Membuat vektor dan membuat time series 
+
+Saya akan membuat filenya salesarima kemudian saya masukkan 12 data perbulan. Dari sini saya akan mendapatkan data time series. ada fungsi untuk mengecek ulang apakah yang saya lakukan ini. 
+```{r}
+salesarima<-c(200,350,250,200,130,150,170,190,200,220,210,180)
+#ini adalah tampilan yang saya sudah buat 
+salesarima
+
+#Ini hal yang penting yakni saya akan membuat waktunya yakni bulan dalam setahun saya akan memulai 2021 dengan frekuensi 12. Artinya saya akan membuat sebuah data yang bulanan selama tahun 2021. Saya namakan file lagi dengan sales_ts
+sales_ts<-ts(salesarima,start=c(2021),frequency=12)
+sales_ts
+     
+#saya mengkonfofirmasi dahulu apakah data saya olah ts atau time series
+is.ts(salesarima)
+is.ts(sales_ts)
+#Saya akan membuat grafik timeseries dengan perintah dibawah ini 
+plot(sales_ts)
+```
+
+2. Mengupload dari data yang ada dari file komputer 
+KIta bisa mengupload dalam bentuk spreadsheet seperti xls, csv, txt dan lain-lain. KAlau kita menggunakan data file yang berada du dakam komputer yang ad di hardware kita.
+```{r}
+bitcoin<- read.csv("~/R/HistoricalData_1632919941795.csv", sep="")
+bitcoin
+```
+ Data yang kita hasilkan bukanlah data time series untuk itu kita merubah ke dalam data ditem series. Data time series itu berkaiatan dengan waktu yang ada di kolom kedua atau Date. Kita rubah datanya dalam bentuk string agar bisa digabungkan dalam time series.
+Merubah data yang sudah ada di date frame dengan menggunakan format as.Date. dalam Tabel data kita akan menggunakan format seperti bulan (m), tanggal (d), dan tahun (y). Harus diperhatikan kalau dengan y kecil maka tahun akan sama menjadi 2020 . pada contoh saya masukkan data tanggal dan saya namankan sebagai bitcoindate dengan format bulan/hari/tahun (%m/%d/%Y)
+```{r}
+bitcoindate<-as.Date(bitcoin$Date,"%m/%d/%Y")
+head(bitcoindate)
+#saya memanggil (call) dua paket zoo dan xts
+library(zoo)
+library(xts)
+#setelah dapat data date membuat ts dengan harga close
+bitcoints=xts(bitcoin$Close.Last,bitcoindate)
+head(bitcoints)
+
+```
+
+Data yang dihasilkan adlaah data dengan format xts. Ini berbeda dengan ts namun bisa digunakan untuk analsis ts. 
+
+Ada cara lain untuk mendapatkan data ini saya datakan dari @Christie2020
+
+## Sifat Data Berkala 
+### Random Walk 
+
+Apakah semua orang dapat  meramal data? Tentu tidak jawaban hanya orang yang mmepunyai pengetahuan saja yang dapat untuk melakukan peramalan tersebut. Ada beberapa banyak ahli statistik yang dapat meramalkan seluruh data Tentu juga tidak sepenuhnya benar. Apa yang dilakukan para ahli hanya sekedar saja bisa untuk menilai arah pergerakan data tersebut. 
+Para ahli memang bisa menyediakan hal yang seperti itu dan ada banyak pilihan dalam peramalan tersebut yang berupa skenario yang akan digunakan oleh para ahli statistik tersebut dalam mengelola perencanaan suatu Hal. Kita setuju jika tidak ada satupun orang yang bisa meramal dengan tepat angka yang ada. Kalau ada orang maka akan kaya yang seperti dalam menebak harga saham. Kalau ia tahu harga saham akan naik sebulan kemudian dalam waktu tiga hari maka ia pasti akan bisa membeli saham tersebut dan mengambil untung dalam waktu tiga hari. Hanya saja ternyata tidak. 
+Ada beberapa data yang mempunyai sifat tidak bisa diramalkan pada sifat data ini semuanya bergerak tidak beraturan. Saat ketika kita mengecek untuk terjadinya *random walk* di dalam data yang kita miliki. Seperti halnya kita berjalan terkadang namanya random walk yang tersebut adalah suatu jalan yang acak-acak tidak ada suatu pola. 
+Kalau tidak ada pola maka semuanya yang berjalan akan terus seperti acak acak. Mungkin suatu saat acak dalam jangakwa waktu yang tertentu akan tetapi suatu saat juga akan kembali berpola ada suatu saat tertentu. 
+Untuk mengetahui kalau data tersebut adalah random walk tentu ada yang menjadi alasam kenapa data tersebut masuk dalam random walk. Data yang termasuk dalam data walk harus diperiksa dulu dengan beberapa cara yakni \@ref(fig:bitcoints)
+
+```{r bitcoints, echo=FALSE, fig.cap="Grafik Bitcoin"}
+library(ggplot2)
+autoplot(bitcoints) + 
+  labs(title = "Plot Data xts", x = "Tanggal", y = "Nilai") +
+  theme_minimal()
+```
+
+	Runs Test, ini adalah salah satu dari bentuk uji non parametrik yang dapat dilakukan dalam menilai apakah kumpulan (set) data tersebut masuk, Uji ini adalah hanya melihat perbedaan antara satu data dengan data yang lainnya hingg dapat dinilai untuk memastikan data ini random walk atau tidak. DAlam uji runs test ini kita akan melihat dengan uji hipotesis nol ada terjadinya random walk sedang Ha adalah tidak terjainya random walk atau menolak H0. Kalau nilai peluang (Probabilitas value) dari uji ini lebih kecil dari 0,05 (P<0,05) maka nisa dipastikan kalau data tersebut terbebas dari time series 
+maka sebelum runs test uji stationer 
+```{r}
+library(tseries)
+adf.test(bitcoints)
+
+```
+Terjadi non stationer dilakukan difference sekali 
+
+```{r}
+bitcoints2<-diff(bitcoints)
+dbitcoints<-na.remove(bitcoints2)
+adf.test(dbitcoints)
+```
+
+kemudian uji run dengan data yang sudah ada di lakukan diferensns tersebut . 
+```{r}
+# Runs Test untuk data xts
+library(randtests)
+runs_test <- runs.test(dbitcoints)
+print(runs_test)
+
+```
+	Hasil dari uji runs menunjukkan kalau nilai probability adalahg lebih kecil dari 0,05 P<0,05 artinya nilai Ha yang berarati tidak terjadinya random walk. Maka dapat disimpulkan kalau data ini terbebas dari random walk. 
+	
+	Uji lain yang bisa digunakan untuk menilai apakah terjadi atau tidaknya random walk adalah variance test. Ketika kita mau untuk menentuan data tersebut terjadi random walk maka kita bisa melihat dengan hal seperti ini atau uji yang seperti ini._*sayangnya sampai saat ini belum bisa uji variance*_
+
+	
+	Uji Ljung Box. Uji ini dapat mendeteksi terjadinya random walk dengan cara menilai data deret berkala melalui Ljung Box Test. 
+```{r}
+# Konversi data xts ke vektor numerik
+data_values <-(dbitcoints)
+# Uji Ljung-Box
+ljung_box_test <- Box.test(data_values, lag = 10, type = "Ljung-Box")
+print(ljung_box_test)
+```
+	Hasil menunjukkan kalau Ljung Box x- squared = 23,975 dengan nilai df =10, menunjukkan tidak adanya random walk pada data tersebut. Nilai p value yang berada di 0.0076 berarati menunjukkan nilainya jauh dibawah 0,05 maka artinya menolak Ho yang berarti tidak terjadinya Random pada data seri ini. 
+
+
+## Decomposes  
+Dalam materi data time series mempunyai empat komponen yang dikenal. Komponen tersebut adalah Trend (T), Seasonal (S), Cyclical (C) dan Irregular (I) atau dirumuskan seperti ini O = T + C + S + I @Yamane1973 Hal ini untuk memahami terlebih dahluu bagaimana sifat dari time series tersebut. Jika kita sudah memahami dari time series tersebut maka kita dapatkan apa yang tepat untuk menduga atau melakukan peramalan dari time series. 
+
+Decompose adalj memisahkan data time series dalam bentuk komponen trend dan komponen tidak beraturan *(irregular)*. Jika ada bagian dari musiman *(seasonal)* maka juga mengikutkan komponen dari musiman(@Coghlan2018).
+
+Untuk melakukan decompoese salah satunya adalah dengan menggunakan software R Studio. Setelah kita membuat satu set data maka kita bisa mengelolanya dalam bentuk time series. RStudio akan membagi ke dalam bentuk empat kolom yang pertama adalah observed adalah data yang diobservasi. Data ini sesuai dengan data yang anda masukkan seperti yang anda masukkan. Kemudian dibawahnya lagi kolom dari trend menunjukkan peningkatan dari data time series yang anda telah hasilkan. Trend ini akan menunjukan apakah data ke dalam maupun data akan ke atas. Setelah itu dibawahnya kita dapat melihat bagian dari musiman yang dapat menunjukkan kapan musiman dari data tersebut. Ini penting sekali kalau ada gerakan musiman kita bisa mengestimasi gerakan data dari time series ini. 
+Kemudian ada random yang acak tersebut. 
+Tiap data mempunyai yang berbeda karena kenyataan yang sudah ada. Setidaknya penguraian dalam time series akan membagi data ke dalam beberapa hal:
+
+###Level
+Bagian ini adalah nilai dari rata-rata urutan dari time series. Setiap pergerakan yang mempunyai nilai yang turun dan naik maka akan ada levelnya. Tentu levelnya akan juga bergerak menurut dengan sudah data time series tersebut. 
+
+### Trend 
+Trend atau kecendrungan dalam kamus bahasa Inggris. Ini berarati suatau data akan mempunyai kecendrungan baik ia mau ke atas (trend meningkat) atau data tersebut lebawah (trend yang menurun). Hal ini tentu bisa ditebak terelebih dahulu atau diestimasi terlebih dahulu. Kita tidak mengenal adanyan penurunan harga dalm suatau komoditi maka kita bisa pastikan bahwa harga komoditi apapaun selalu memiliki trend yang meningkat. Dengan demikian kita bsia memprediksi adanya trend yang meningkat untuk semua harga komoditi. 
+
+### Musiman 
+Data juga mempunyai musiman seperti buah yang ada pada musim tertentu. Kalau data juga mempunyai musiman. Ada buah mangga yang ada pada bulan tertentu akan berbuah maka produksi atau datanya akan melimpah di bulan tertentu sebaliknya kalau tidak ada musim maka buahnya akan menurun. 
+
+Dalam praktek decompose penulis kan menggunakan dataset untuk data otr. Maka hasilmya akan terlihat seperti di bawah ini. 
+
+### Irregular 
+Dalam Rstudio penggunaan penguraian *(decompose)* time series tidak termasuk irregular. Maka harus ada perlakukan lagi untuk mengetahui Irregular tersebut 
+```{r}
+library(forecast)
+decompose(otr)
+```
+
+
+### Random 
+Gerakan time series ini tentu berbeda dengan data yang ada di atas. Ia tidak mempunyai trend seperti halnya suatua data harga komoditi. Tambahan data ini juga tiak mengenal musiman pada yang bulan tertentu atau per periode terentu. Untuk data ini akan ada suatau pengecualaian dalam membuat estimasi dari data seperti ini. 
+
+## Pertanyaan 
+
+1. Apakah data random sama dengan irregular? 
+
+2. Apa komponen keempat dalam data time series?
+
+3. Jelaskan apa yang dimaksud dengan data time series?
+
+4. Apakah yang dimaksud level dalam decompose data series? 
+
+5. Apakah setiap data mempunyai sifat musiman dan bagaiaman kita menegtahui data tersebut mempunyai sifat musiman? 
+
+6. Buatlah data time series dari Saham TLKM dari tanggal 1 Januari 2020 - 31 Desember 2024 dengan menggunakan package quantmond?
+
+7. Sebutkan saja komponen dari time series dan jelaskan dengan singkat?
+
+8. Buatlah data time series bulanan dengan data seperti ini 40,43,42,56, 57, 58, 59,60, 54, 63,54, 59?
+
+9. Jelaskan apakah level dan trend sama saja jelaskan menurut anda?
+
+10. Mungkinkah kita bisa mengurangi bagian seasonal data time series yang ada di dalam data set?
+
+
+
+
+# Smoothing 
+
+Dalam beberapa metode ada juga melakukan metode Smoothing dalam beberapa data time series. Hal ini untuk membuat suatu peramalan setidaknya ada tiga bentuk peramalana seperti di bawah ini 
+
+Dalam Esponenteial smooting menggunakan rata-rata tertimbang dari obserbasi masa lampau, dengan pembobotan yang menurun secara eksponensial seiring pengamatan lebih lama lagi @3b1355aedd1041f1853e609a410576f3. 
+
+```{r ses, echo=FALSE}
+bitcoinforecasts <- HoltWinters(dbitcoints, beta=FALSE, gamma=FALSE)
+print(bitcoinforecasts)
+#untuk memeriksa residual ditampilkan lima baris saja
+head(bitcoinforecasts$fitted)
+```
+Tahapan berikutnya adalah uji  Ses dua kalau dalam simple hanya ada satu iindikator maka dalam ses 2 ini ada yang namanyama indikator beta.
+```{r ses2 , echo=FALSE}
+bitcoinforecasts2 <- HoltWinters(dbitcoints,  gamma=FALSE)
+print(bitcoinforecasts2)
+#untuk memeriksa residual ditampilkan lima baris saja
+head(bitcoinforecasts2$fitted)
+```
+DAlam uji ini menngunakan level dan trend maka nilai alpha dan beta masih rendah yajni sekitar 0,52 dan 0,074 maka kita bisa meyakni kalau hasil ini menunjukkan bahwa ternyata perubahan nilai di masa lampau hanya mempunyai perangaruh sekitar 0,052 sedangnkan selebihnya 0,948 dipegaruhi oleh masa depoan 
+
+kalau kita menggunakan ses 3 maka kita akan menghasilakan tiga indikator alpha, beta, dan gamma. Hal ini akan berkaiatan dengan trend, level dan musiman. 
+
+## Simple Exponential Smoothing 
+	
+Metode ini adalah suatau metode smoothing time series mmebuta peramalan yang dalam waktu singkat (short term forecast). Penggunaan ini oada data yang tidak mengandung musiman atau season dan juga level yang tetap. Seaosn ini artinya data bukanlah musiman seperti yang dijealskan sebalumnya. Suatau data juga mempunyai unsur musiman berdasarkan sifat data tersebut. Kita tahu bahwa ada beberpa data yang tidak terpengaruh dengan musiman yang terjadi berkaitan dengan bulan tertentu atau waktu tertentu. 
+
+Dalam metode simple expoentential ada namanaya tingkat level yang menggamarkan dengan data dengan pointterbaru (the estimating the level of current point). Nilai level ini berkisar antara 0 dengan 1 dimana nilai 0 adalah yang terendah . Nilai mendekat 0 merupakan timbangan kecil dari untuk peramalan. 
+
+## Holt Exponential Smoothing 
+
+Pada kasus data yang levelnya mempunyai trend menurun atau meningkat maka kita bisa menggunaan Holt Expentential Smoothing. Pada model ini ada nilai alpha dan beta anatara nilainya 0 sampai 1 dimana nilai yang mendekati nol adalah nilai yang  timbangan yang rendah pada observasi yang terkini. Nilai yang rendah juga menjadi beban yang berat karena perlakianya menjadi lebih besar. 
+
+## Holt Expontential Seasonal Smoothing
+
+Pada peramalan ini bukan hanya menyangkut dari trend tetapi ada unsur seasonal karenanya disebut dengan seasonal smoothing. Untuk metode seperti ini kita akan dapat menduga data time series yang ada data musimannya. Pada bagian peramalan ini adalah mempunyai tiga indikator seperti alpha, Beta dan Gamma. Untuk Alpha dan Beta mempunyai nilai 0 sampai dengan satu. 
+Pola peramalan ini mempunyai dua yakni Mulitcaptive dan juga additive. Kedua metode ini dapat diterapkan atau diaplikasikan pada jenis data yang berbeda.
+Adapun persamaan persamaan untuk Additive \@ref{eq:additive} seperti ini: 
+
+\begin{equation}
+
+Yt = Lt + St + εt
+
+(\#eq:additive)
+\end{equation}
+UNtuk Bagian Level aatau tingkat terdiri dari β0 + β1t
+
+Untuk bagian persamaan Multicaptive maka akan seperti ini 
+\[
+Yt = Lt * St * εt\label{eq:Multicaptive}
+\]
+
+
+Untuk Bagian Level aatau tingkat terdiri dari β0 + β1t
+
+```{r HoltWinter, echo=FALSE}
+# Load library forecast
+library(forecast)
+
+# Data contoh (atau gunakan data Anda)
+data("AirPassengers")
+ap_ts <- AirPassengers
+
+# Langkah 1: Fit model ETS
+ets_model <- ets(ap_ts, model = "AAA")  # Model ETS Additive
+
+# Langkah 2: Prediksi pada data yang sama
+forecast_ets <- forecast(ets_model)
+
+# Langkah 3: Evaluasi model (RMSE, MAE, MAPE)
+accuracy(ets_model)  # Evaluasi in-sample
+
+```
+
+
+
+
+
+
+
+# Penggunaan Least Square
+Inilah model yang paling sederhana dalam time series. Model ini mengubungkan satuan tahun sebagai variabel X dan juga variabel  Y adalah data tersebut sebagai variabel dari data tersebut. Untuk mengitungnya dengan terlebih dahulu merubah data dalam bentuk tahunan dengan data awalan yakni angka 0 sebagai data awalan atau awalan dari perkiraan. 
+Data waktu digunakan seolah seperti data variabel independen yang mempengaruhi data tersebut. Kita percaya kalau waktu itu yang merubah data apakah akan meningkat atau akan menurun data tersebut. Hasil data tersebut akan diolah dengan hitungan manual maupun dengan hitungan software seperti microsoft Excel atau juga RStudio. 
+Adapun langkah tersebut adalah seperti : 
+	Mengumpulkan data time series baik dalam sequence hari, minggi, bulan, tahun atau yang lebih lama lagi. Seperti dijelaskan dalam Teorema \@ref(thm:block-least-squares), ...
+
+	
+	# Teorema Block dalam Least Squares
+
+::: {.theorem #block-least-squares}
+Misalkan $A$ adalah matriks $m \times n$, yang dapat dibagi menjadi blok sebagai berikut:
+\[
+A = \begin{bmatrix} A_1 \\ A_2 \end{bmatrix},
+\]
+di mana $A_1$ adalah matriks $m_1 \times n$ dan $A_2$ adalah matriks $m_2 \times n$ dengan $m_1 + m_2 = m$. 
+
+Jika $\mathbf{b}$ adalah vektor yang juga dapat dibagi menjadi dua blok:
+\[
+\mathbf{b} = \begin{bmatrix} \mathbf{b}_1 \\ \mathbf{b}_2 \end{bmatrix},
+\]
+maka solusi least squares dari $\min_{\mathbf{x}} \| A\mathbf{x} - \mathbf{b} \|_2^2$ dapat dihitung secara blok dengan memisahkan $A$ dan $\mathbf{b}$ menjadi bagian-bagian yang sesuai.
+
+Teorema ini menyatakan bahwa:
+\[
+\mathbf{x} = (A^\top A)^{-1} A^\top \mathbf{b},
+\]
+dapat dihitung menggunakan blok $A_1$, $A_2$, $\mathbf{b}_1$, dan $\mathbf{b}_2$ secara independen jika matriks $A$ memenuhi sifat tertentu, seperti ketidakdegenerasian.
+:::
+
+Penjelasan
+Teorema ini berguna untuk mempercepat komputasi *least squares* dalam kasus matriks besar yang dapat dipecah menjadi beberapa bagian.
+
+Pengkodean dari data tersebut. Untuk pengkodean seperti ini kita bisa memulai dengan angka awal sebagai angka 0 tersebut. Cara lain adalah dengan cara memberikan angka 0 pada waktu di tengah daripada jumlah data tersebut. Ini berlaku pada yang ganjil saja kalau di waktu tengah ada yang waktu ganjil misalnya jka jumlah data 7 maka nilai yang menjadi angka 0 adalah yang ditengah. Apapun kode ini boleh selama hal itu adalah konsisten. Dalam soal maka kita bisa menunjukkan nilai tersebut. 
+Banyak yang harus kau perhatikan dlama penggunaan peramalan seperti ini. Setidaknya d masalah dalam autokorelasi dalam peramalan dengan least suqare seperti ini. Ini terjadi autokorelasi yang terjadi. Pada data time series data yang satu mempunyai hubungan dengan yang lainnya ? (mungkinkah hal ini akan terjadi dengan autokorelasi tersebut. 
+
+Dalam upaya untuk meramal dengan metode least square. kita akan menggunakan data set daripada rstudio yang bernama JOhnsonJOhnson. Dari sini akan kita meregresi dengan waktunya . Jadi waktu itu berkedudukan sebagai variabel X atau variabel bebasnya. kemudian langkah lagi @RPubs2
+
+```{r}
+# Menambahkan kolom waktu sebagai prediktor
+datajj <- data.frame(
+  time = time(JohnsonJohnson),
+  y = as.numeric(JohnsonJohnson)
+)
+
+# Model regresi linear
+modellm <- lm(y ~ time, data = datajj)
+summary(modellm)  # Menampilkan hasil regresi
+
+```
+
+Dalam least square kita akan memperhatikan beberapa asumsi yakni kemungkinannya ada uji durbin watson yang menunjukkan dari model tersebut. Adanya hubungan ini akan mendpaatkan kemungkinan bias dalam bentuk peramalan 
+
+Solusi adalah melakukan *differencing* di data yang sudah ada. Biasanya penggunaan differencing satu kali sudah bisa mengatasi masalah autokorelasi. 
+
+
+
+```{r}
+library(lmtest)
+dwtest(modellm)
+```
+Nilai terlalu rendah maka nlai 0,80058 tersebut masih jauh dibawah nilai 2. Biasanya nilai dua itu sudah cukup bagus untuk 
+autokorelasi.
+
+## Autokorelasi 
+Seperti diatas kita melihat adanya kemungkinan terjadinya autkorelasi pada data time series kemungkinan besar. Banyak data dari Time series yang mempunyai pola gangguan seperti ini. Pola data yang berhubungan tersebut karena sifat data yang berkala dan berderet seperti mmepunyai pola tertentu yang akan berulang suatu saat lagi. 
+Setelah kita mempelajari adanya autokorelasi maka kita mengecek apakah regresi akan juga mmebuat atau berbeda dengan apa yang kita lakukan. Beberapa data akan selesai dengan *least square* tapi lebih banyak dari data itu akan membuat suatu peramalan yang lebih tepat. 
+Salah satunya adalah dengan menggunakan autokorelasi tersebut. Dengan demikian kita bisa untuk mendapatkan suatu rediksi yang lebih tepat. 
+
+Adapun autoregresi adalah salah satu upaya dengan meregresikan beberapa data dengan satu periode sebelumnya(?). Kalau kita bisa membuat seperti ini maka kita bisa untuk membuat model ini. Tentu kita tidak bisa menenbak semua hal yang dapat kita gunakan untuk regresi ini. Hanya beberapa pilihan yang dapat kita lakukan untuk itu. 
+
+Dalam pemanfaatan ramalan kita juga dapat menjelaskan ada lag atau jeda waktu yang ada. Ketika anda sosialisasi suatu peraturan apakah semua orang langsung menuruti atau memathuhi peraturan tersebut. Tentu tidak penetapam atau pemberlakukan peraturan akan terjadi jika kalau kita sudah melalaui sosialisasi. Ada beberapa alasan atau *reason* dengan yang terjadi dengan hal ini: seperti 
+	Masalah psikologi karena penerpan sesuatu mungkin akan  membuthan waktu untuk penerapan. Ketika kita menginginkan sesuatu apakah langsung datang apa yang kita mau. Tentu tidak akan selalu demikian. kita dulu menunggu waktu yang tepat untuk membuat terlebih dahulu agar kita bisa untuk mengetahui sinyal yang akan datang.
+	
+## Heterokedatisitas	
+
+karena least quare dlah model seperti regresi maka harus melwwati seperti asumsi error yang jumlahnya nol maka kita bisa memeriksanya dengan bptest
+```{r}
+library(lmtest)
+bptest(modellm)
+```
+Nilai dari bptest juga menunjukkan tidak menggembirakan karena nilanya lebih rendah dari lima persen atau 0,05 (p<0,05) maka bisa disimpulkan model *least square* tidak cocok untuk data ini.
+
+Kemudian kita bisa menguji test normalitas dengan seperti dibawah ini.  
+
+```{r}
+# Histogram residuals
+hist(modellm$residuals, main = "Histogram of Residuals", xlab = "Residuals")
+
+# QQ Plot
+qqnorm(modellm$residuals)
+qqline(modellm$residuals, col = "red")
+
+# Uji Shapiro-Wilk
+shapiro.test(modellm$residuals)
+
+```
+Hasilnya juga tidak menggembirakan juga karena dalam uji ini juga menunjukkan tidak ada yang dapat menerima normalitas dari residual data.
+	
+Pertanyaan 
+
+1. Apakah autokorelasi disebut sebagai korelasi terhadap dirinya sendiri?
+
+2. Mengapa Autokorelasi itu harus dihilangkan?
+
+
+# Moving Average
+Dalam bentuk peramalan time series atau data berkala juga menggunakan beberapa hal. Sifat data time series adalah sifat yang tidak beraturan. Terkadang suatau data meningkat begitu pesat di saaat waktu tertentu namun di saat lain yang menurun. Kalau mengumpulkan data yang time series maka kita akan melihat suatu data yang sangat beraturan yang tidak terduga, 
+Untuk menduga data yang tertinggi maka kita akan khawatir dengan data yang sedemikian tinggi tersebut akan tetapi kalau kita mebuat upaya untuk menghaluskan gerakan data tersebut maka kita akan melihat pergerakan data tidak begitu curam sekalau atau tinggi sekali. Bahkan anda melihat kalau perkembangan suatu data tersebut menjadi ebih mendatar. 
+Dengan demikian kita bisa menebak kalau data tersebut bergerak ke atas atau ke bawah maka kita bisa memprediksi lebih mudah lagi. Sesuai namanya Moving average adalah rata-data bergerak. Suatu data dalam time series akan kita susun demikian sehingga kita akan perioleh dengan data yang lebih rata dengan itu. 
+Untuk membuat suatu moving average kita bisa menghitung dengan manual mengenai Moving average tersebut. Umpama kita bisa menghaluskan data *(Smooth)* dengan moving average dalam periode empat tahun. Kita bisa menggunakan juga data dengan moving average sebesar 5 tahun . Kita dapat membandingkan kedua data yang telah mengalami smoothing. Keduanya begitu halus. 
+Dengan ada moving average kita seolah melihat “hakikat” dari data time series tersebut. Ia melembutkan gerakan data dan kita dapat melihat yang mana situasi yang terjadi menurun atau dengan yang mana situasi penurunan, Karena kita mengambil rata-rata maka kita telah membagikan nilai yang sedemikian tidak merata terus. Ada suatu tambal sulam anatar kedua data karena membagi rata yang satu menutupi kekurangan yang lainnya. Selama perbedaan kurang menyolok maka pergerakan tidak akan berbeda namun juga sudah sangat berbeda maka akan terliaht dengan kentara kalau nilai itu akan berbeda. 
+
+Apakah moving average itu suatu bentuk peramalan ?
+```{r}
+# Data time series contoh
+datama <- c(112, 118, 132, 129, 121, 135, 148, 148, 136, 119, 104, 118, 
+          115, 126, 141, 135, 125, 149, 170, 170, 158, 133, 114, 140)
+
+# Membuat data time series
+otr <- ts(datama, start = c(1949, 1), frequency = 12)
+plot(otr, main = "Original Time Series", col = "blue")
+
+```
+
+
+Dari hasil grafik diatas maka kita bisa untuk melakukan perhitungan dengan moving average seperti dibawah ini: 
+
+```{r}
+# Moving average dengan jendela 3 bulan
+ma_3 <- stats::filter(otr, filter = rep(1/3, 3), sides = 2)
+
+# Moving average dengan jendela 5 bulan
+ma_5 <- stats::filter(otr, filter = rep(1/5, 5), sides = 2)
+
+# Plot hasil moving average
+plot(otr, main = "Moving Average (3 dan 5 bulan)", col = "blue")
+lines(ma_3, col = "red", lwd = 2)  # 3 bulan
+lines(ma_5, col = "green", lwd = 2)  # 5 bulan
+legend("topright", legend = c("Original", "MA (3)", "MA (5)"), 
+       col = c("blue", "red", "green"), lty = 1, lwd = 2)
+
+```
+Kita melakukan moving average dengan 3 periode dan dua periode hasilnya menunjukkan gerakan penghalusan *smooth movement* Dengan 3 periode lebih cepat dalam menagggapi perubahan namun tidak halus sifatnya sebaliknya 5 periode kurang. Bentuk Moving Average hanya melihat sifat dari _trend dan musiman saja_
+
+
+Stationer 
+Kita menyadari kalau data time series ada dari sebuah sumber data. Data itu berasa dari bisa jadi satu individu, satu karakter, satu peristiwa dan lain-lain. Data time series adalah data yang tidak dibuat (tentu selama) tidak ada manipulasi dari pihak pembuat data tersebut. Katakanlah ada data tersebut akan ada maka kita auki saja itu sebagai data dibalik benar atau salahnya data tersebut. 
+Kebanyakan data time series itu adalah tidak stationer. Hal ini berkaitan dengan data yang sifatnya time series. Ada suatu pola yang berkaitan dengan aktu yang sudah dijelaskan sebelumnya. Tentunya maksuknya stataioner ini bukanlah data yang acak seperti halnya data dalam random walk tetapi kondisi ini berkaitan dengan kestaioneran itu sendiri. Stataioner adalah suatu kondisi data yang rata. Pada saat data bertumbuh atau meningkat sebaliknya data tersebut bisa menurun maka ia mempunyai perkembangan yang sulit untuk diramalkan . dengan sata stataiomner yang mempunyai sumbu dengan garis tegak maka akan mudah sekali melakukan peramalan
+Untuk mendeteksi stationer kita menggunakan uji *Augmented Dickey-Fueller* yang ada dengan rumus seperti ini. Dari uji ini akan kita peroleh data tersebut apakah sudah sesuai 
+Umumny mengatasi data yang tidak stationer adalah differencing atau dengan mencari selsisih data sebelum dengan data sesudahnya  
+Pertanyaan apakah stationer berkaitan dengan autokorelasi. ∆yt = yt_-1-y_t . Dengan mencari selisih nilai ini maka menjadi data lebih stataioner @Heumann2016 Umunnya data akan menjadi stataioner setelah perlakukan ini data akan menjadi stationer dan siao untuk langkah selanjutnya sesuai dengan data. Kita harus perhatikan juga bahwa ternyata memang ada data-data yang non stationer. Dalam berapa literasi ini bisa menjadikan suatu hal yang daripada yang lain. Kalau memang data akan sulit distationerkan maka ini adalah alternatif yang lain. Pada beberapa kasus memang sulit untuk memperbaiki data yang sudah tidak bisa diatur lagi. 
+Tentu ada beberapa hal yang menjadi deteksi dari kestationera data tersebut kita bisa melakukan uji tersebut seperti halnya untuk menduga adanya kestationeradan dari data time series tersebut. Pengujian ini berlaku pada data yang mentah data yang sudah mengalami difernesiasi. Sebab dengan data differensiasi tidak menjamin kalau sudah selesai maka akan menjadi stationer. 
+Untuk mengetahui adanya stationer atau tidak dalam data maka kita harus melakukan uji kestationeran. Tampilan grafik yang mempunyai pola saja tidak cukup meyakinkan adanya pola dalam data tersebut. Untuk memastikan kita bisa melakukan 
+	
+	Uji Augmented Dickey-Fueller
+	
+Pengujian ini akan memnggunakan variabel seperti dalam persamaan ini \@ref(eq:adf)
+
+\begin{equation}
+
+∆Yt = α + βt + γt-1 +δ1∆yt-1+ … + δp-1∆yt-p+1 +εt
+
+(\#eq:adf)
+
+\end{equation}
+
+Dalam uji ADF hipotesis nol adalah terjadi data tidak stationer, sedangkan hipotesis alternatifnya dalah data stationer. Jika nilai probabilitas dari uji ADF menunjukkan lebih kecil dari 0,05 (P<0,05 maka hasilny adalah data stationer)
+
+	Uji Philip Peron 
+Uji ini adalah salah sati alternatif dari Uji ADF. Uji ini adalah pengembangan dari Uji Dickey-Fueller pengembangan nilai dari ρ=1 menjadi ∆Yt = (ρ-1) yt-1+ +ut 
+Lambang Delta atau ∆ adalah difference maksudnya dalah selisih antara data waktu tertentu  (Xt)dengan waktu yang sebelumnya (Xt-1)
+
+Apa arti kondisi tidak stationer? 
+Apa implikasi data stationer. 
+
+
+<https://jagostat.com/analisis-time-series/autoregressive-model>
+
+
+# Model ARIMA 
+
+Ilmuwan mengembangkan tehnik untuk meramal data runtun waktu dengan dari berbagai unsur yakni AutoRegresi dan juga Moving Average. Ada lagi faktor I yang juga dapat membuat peramalan ini mempunyai metode yang berbeda dengan metode yang lainnya. Model ARIMA ini cocok untuk jangka pendek atau short term dan akan kurang berfaedah jika untuk meramal pada masa yang lebih jauh lagi. Metode ini ARIMA disebut juga Box_Jenkins sesuai dengan yang nama dari si penemunya.@Neusser2016 
+ARIMA sendiri untuk data time series univariate. Artinya penggunaan satu variabel data saja. Proses peramalan ini hanya menggunankan data itu saja bukan dari variabel yang lain baik itu variabel yang sejensi atay variabel yang berbeda sama sekali.  
+Unsur ARIMA adalah 
+	Unsur AutoRegresi 
+$$ϕXt = µ’ + ϕXt-1 + ϕXt-2 +… + ϕXt-p+ εt[0]$$
+dimana : µ’    = suatu konstanta 
+               ϕXt-p = parameter autoregresif ke-p
+               εt         = nilai kesalahan pada saat t 
+	Unsur kedua adalah Moving Average atau rata-rata bergerak yang bisa kita tulisakan seperti ini 
+
+θXt = µ’ - θXt-1 - θXt-2 -… - θXt-k+ εt[0]
+dimana : µ’    = suatu konstanta 
+               θXt-p = parameter autoregresif ke-p
+               εt         = nilai kesalahan pada saat t 
+	Model Campuran 
+	Proses ARMA 
+Untuk model enggabungan anatraa AR dan MA maka akan menghasilkan persamaan seperti ini:
+Xt = µ’ + ϕXt-1 + et- - θXt-1 
+Atau
+(1-ϕ1B)Xt = µ’ + (1- θ1B)Xt
+AR(1)                     MA(1)
+	Proses ARIMA . Jika ada proses membuat non stationer maka permalan ARIMA dapat seperti 
+
+(B-1) (1-ϕ1B)Xt = µ’ + (1- θ1B)Xt
+Pembeda satu AR(1)        MA(1)
+
+ARIMA Musiman (Seasonal ARIMA) 
+Pada beberapa data terjadi musiman seperti yang sudah dibahas diatas . Untuk itu ARIMA juga mengatasi hal ini dengan ARIMA musiman. Sesuai dengan namanya model ini lebih cocok dengan data yang mengandung musiman. Tentu ada beberapa c ara menegtehui data tersebut musiman. Seperti alnya musim-musim yang kita alami seperti musim hujan 
+Da beberapa cara agar kita bisa mengetahui apakah data tersebut atau musiman.
+
+Apakah data musiman itu juga data stationer ? 
+Apakah kita bisa menggunakan ARIMA biasa dengan ARIMA Seasonal 
+
+Seberapaun metode yang kita gunakan itu akan berpulang lagi dengan kepada kita. Ada yang harus kita perhatikan kalau peramalan tersebut meleset atau tidak. Kita bisa lakukan dengan menghitung nilai error dari hasil peramalan. Kalau nilai error yang kecil maka kita bisa meyakini keunggulan dari peramalan kita akan menjadi lebih baik. 
+
+## ARIMA R
+
+Model ini adalah model yang sangat baik untuk kita kerjakan karena dengan model ini kita bisa mendapatkan suatua prediksi yang tepat untuk peramalan dalam time series. Dalam model ini maka kita 
+
+```{r}
+library(forecast)
+library(tseries)
+adf.test(lynx)
+acf(lynx,lag=100)
+```
+
+Setelah kita mengetahui kestationeran dari data maja kita bisa melakukan beberapa hal yakni dengan melihat model yang paling baik untuk metode ARIMA ini. 
+Salah satu bentuk peramalan data yang berbentuk data berkala atau (Time Series) adalah ARIMA. Metode ini yang menggabungkan komponen autoregresi (p), difference (d) dan juga Rata-rata bergerak (Moving Average) yang digambarkan dengan q. 
+
+Metode ini sangat baik dan adalah bentuk penyermpurnaan. Dengan adanya metode yang baru bahkan berani bilang kalau metode ini lebih baik dari *Artificial Neural Network (ANN)* yang sidah terkenal dengan canggih sedemikian rupa. 
+
+Banyak beberapa software yang digunakan untuk menduga ARIMA. Tentu saja sesuai judul kali ini penulis akan membuat suatu tutorial untuk membuat pengeloan data time series dengan ARIMA.
+
+Pertama kita akan membuat dahulu data. Kita bisa membuatnya dengan data manual kalau kita tidak merasa repot atau kita load dari txt dengan csv. Kemduian kita akan membuat data menjadi data time series 
+```{r}
+modelarimalynx<-auto.arima(lynx)
+summary(modelarimalynx)
+```
+
+Setelah dari model auto.arima ini kita akan mengecek reisual dengan beberapa uji dan menunjukan apaka model sudah sesuai 
+
+```{r}
+checkresiduals(modelarimalynx)
+#Uji Box Test
+Box.test(residuals(modelarimalynx), lag = 10, type = "Ljung-Box")
+
+```
+
+setelah melihat nilai MAPE begitu tinggi maka pertimbangkan adnya volatilitas di statistik ini 
+
+### Pertanyaan 
+1. Apa yang dimaksud dengan ARIMA?
+
+2. Apakah ARIMA Adalah penggabungan metode Auto Korelasi dengan Moving Average? Jelaskan Jawaban anda?
+
+3. Coba tuliskan persamaan ARIMA dengan order ARIMA 2,1,2? 
+
+4. Apakah hal yang perlu dilakukan dalam Uji ARIMA?
+
+5. Mengapa kita memerlukan untuk menghitang MAPE, MAE, RMSE dan sebutkan kegunaan dari semua itu?
+
+6. Kalau nilai RMSE begitu besar maka jelaskan apa artinya bagi ARIMA? 
+
+7. Kalau data mengandung musiman maka apa yang dapat kita lakukan dengan hal itu? 
+
+8. Bagaimana cara membaca PACF dalam uji ARIMA?
+
+9. Apa Fungsi Uji Ljung BOx pada model ARIMA
+
+10. Apakah perlu untuk menguji heteroskedatisitas di ARIMA?
+
+# ARCH Model 
+Pada satu kasus terjadi saja yang namanya gangguan vilatilitas. Metode ini ditemukan karena danya data harga saham yang begitu volatilitas . Harga saham adalah suatu data yang sangat volatilitas karena dalam waktu seperdetik saja maka harga saham itu bisa berubah. Dalam hitungan jam saja harga saham akan melonkjak dengan tajam yang dapat memberikan keuntungan bagi beberapa investor dan juga memberikan keuntungan bagi sebagai investor lainnya. 
+
+Semua data bergerak variasi artinya tidak ada data yang bergerak begitu mendatar saja seperti garis lurus. Dari waktu ke waktu tidak ada peningkatan maupun penurunan. Ada beberapa data yang model ini seperti saham yang tidak terkenal Kita bisa melihat harga saham beberapa peruisahaan yang tidak likuid (Ilikuid) mempunyai pergerakan yang “sangat stabil”. Hal ini disebabkan tidak adanya pergerakan. 
+
+Masalah isu yang sangat utama dalam metode ini adalah volatilitias atau keragaman yang sangat tinggi dari beberapa jenis data. Dengan adanya vilatilitas yang beragam akan menyebabakan estimasi galat E(ε)≠0. Hal ini tentu tidak bisa menjadikan estimasi tepat. Untuk itu perlu suatu model untuk mengatasi permasalahan error ini. Kalau error yang tidak konstan ini dipaksakan untuk diterapakan maka hasil estimasi menjadi bias, atau menjadi kemungkinan salah yang besar. 
+
+Untuk melakukan metode ARCH maka kita bisa menggunakan 
+	Uji Box-Jenkins
+	Uji ARCH Test 
+
+## Model GARCH 
+
+Adalah Engel yang menemukan metode ini pada tahun 1982  dengan inspirasi atas kondisi data yang cenderung Volatile. vilatiel kondisi tidak beraturan dan cenderung berubah . Data volatile pada praktik manajemen risiko, pemilihan portofolio, dan 
+
+volatile dengan variance
+ volatile 
+
+Borilsav menggunakan GARCH dengan menggunakan residual 
+
+volatile kondisi ketidakstabilan, cenderung bervariasi dan sulit diperkirakan 
+implikasi data volatilitas tinggi , cenderung bervariasi sulit diperkirakan
+
+
+Model ARCH 
+Tentu tidak semua data cocok dengan menggunakan data model ARCH seperti ini. Kalau data dalam keadaan “baik-baik” saja maka kita tidak perlu untuk juga untuk menggunakan hal seperti ini. Ada data yang cenderung musiman dan ada juga data yang dapat mudah diramalakan dengan metide ARIMA saja. 
+
+Identifikasi dengan metode Box Jenkins 
+adanya efek ARCH dari  indentifikasi 
+2. pola residual dengan collergam menggunakan ARCH multiplier Langrange 
+Estimasi model persamaan ragam 
+$$ Z_t=V_t √(α_0+α_1 Z_(t-1)^2 )$$  dengan nilai α0 > 1 dan 0<α1<1
+
+pengujian estimasi error pengujian keacakan residual dan efek ARCH 
+
+Peramalan menggunakan peramalan terbaik dengan menggunakan RMSE MAE dan MAPE
+
+```{r}
+library(FinTS)
+ArchTest(residuals(modelarimalynx))
+```
+Hasil perhitungan menunjukkan tdiak adanya heteroskedatisitas maka untu uji GARCH juga tidak dipelrukan. KIni dengan dmeikian kemungkinan menggunakan SARIMA yakni Seasonal ARIMA yang emmpertimbangkan seasonal 
+
+## Langkah UJi GARCH 
+
+1. Memilih data set yang mempunyai volatilitas yang tinggi 
+
+2. TRansformasi daata dengan log return agar data stabil
+
+3. Melakukan uji staioner dengan menggunakan ADF Test
+
+4. Diagnostik model untuk menguji REsidual 
+
+5. Prediksi atau forecast menngunakan rugarch
+
+KIta akan terapkan pada data Air Passenger yang ada di sana 
+
+```{r}
+# Data EuStockMarkets
+data("EuStockMarkets")
+
+# Ambil salah satu indeks saham, misalnya DAX (Jerman)
+dax <- EuStockMarkets[, "DAX"]
+
+# Plot data
+plot(dax, main = "DAX Index", col = "blue", ylab = "Price")
+
+# Hitung log-return untuk membuat data stasioner
+dax_return <- diff(log(dax))  # Logarithmic return
+plot(dax_return, main = "Log Return of DAX", col = "red", ylab = "Log Return")
+
+```
+
+
+dalam analsisi ini kita bisa membuat evaluasi model tersebt karena hal itu dapat untuk membuat kita yakin dengan hasil yang kta peroleh. 
+
+```{r}
+# Uji ADF
+adf.test(dax_return, alternative = "stationary")
+
+```
+
+setelah itu kita bisa melakukan untuk pemodelan model GARCH seperti 
+
+```{r}
+library(rugarch)
+library(tseries)
+library(quantmod)
+# Definisikan spesifikasi model GARCH(1,1)
+garch_spec <- ugarchspec(
+  variance.model = list(model = "sGARCH", garchOrder = c(1,1)),
+  mean.model = list(armaOrder = c(0,0), include.mean = TRUE),
+  distribution.model = "norm"  # Distribusi error normal
+)
+
+# Estimasi model GARCH
+garch_fit <- ugarchfit(spec = garch_spec, data = dax_return)
+
+# Ringkasan hasil estimasi
+print(garch_fit)
+
+```
+
+Kemudian baru kita evaluasi model tersebut adalah dengan beberapa grafik yang ada. Dalam grafik ini diberikan 
+
+```{r}
+par(mar = c(4, 4, 2, 1))  # Format: c(bawah, kiri, atas, kanan)
+# Plot residual standar
+plot(garch_fit, which = "all")
+
+```
+
+### Pertanyaan 
+
+1. Mengapa kita menggunakan ARCH?
+
+2. APa saja langkah untuk GARCH?
+
+3. Apa masalah inti dalam GRACH?

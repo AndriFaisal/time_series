@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Bab 6 ARCH Model | Analisis Time Series dengan RStudio</title>
+  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+number_sections: true
+fig_caption: true
+set in the _output.yml file.</p>" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Bab 6 ARCH Model | Analisis Time Series dengan RStudio" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+number_sections: true
+fig_caption: true
+set in the _output.yml file.</p>" />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Bab 6 ARCH Model | Analisis Time Series dengan RStudio" />
+  
+  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
+The HTML output format for this example is bookdown::gitbook,
+number_sections: true
+fig_caption: true
+set in the _output.yml file.</p>" />
+  
+
+<meta name="author" content="Andri Faisal" />
+
+
+<meta name="date" content="2024-12-29" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="model-arima.html"/>
+<link rel="next" href="cob-chap.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Analisis Time Series</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Tentang</a>
+<ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i>Usage</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="pendahuluan.html"><a href="pendahuluan.html"><i class="fa fa-check"></i><b>1</b> Pendahuluan</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="pendahuluan.html"><a href="pendahuluan.html#semua-antisipasi"><i class="fa fa-check"></i><b>1.1</b> Semua antisipasi</a></li>
+<li class="chapter" data-level="1.2" data-path="pendahuluan.html"><a href="pendahuluan.html#jangka-waktu-peramalan"><i class="fa fa-check"></i><b>1.2</b> Jangka waktu Peramalan</a></li>
+<li class="chapter" data-level="1.3" data-path="pendahuluan.html"><a href="pendahuluan.html#persiapan-data-rstudio"><i class="fa fa-check"></i><b>1.3</b> Persiapan Data Rstudio</a></li>
+<li class="chapter" data-level="1.4" data-path="pendahuluan.html"><a href="pendahuluan.html#sifat-data-berkala"><i class="fa fa-check"></i><b>1.4</b> Sifat Data Berkala</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="pendahuluan.html"><a href="pendahuluan.html#random-walk"><i class="fa fa-check"></i><b>1.4.1</b> Random Walk</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="pendahuluan.html"><a href="pendahuluan.html#decomposes"><i class="fa fa-check"></i><b>1.5</b> Decomposes</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="pendahuluan.html"><a href="pendahuluan.html#trend"><i class="fa fa-check"></i><b>1.5.1</b> Trend</a></li>
+<li class="chapter" data-level="1.5.2" data-path="pendahuluan.html"><a href="pendahuluan.html#musiman"><i class="fa fa-check"></i><b>1.5.2</b> Musiman</a></li>
+<li class="chapter" data-level="1.5.3" data-path="pendahuluan.html"><a href="pendahuluan.html#irregular"><i class="fa fa-check"></i><b>1.5.3</b> Irregular</a></li>
+<li class="chapter" data-level="1.5.4" data-path="pendahuluan.html"><a href="pendahuluan.html#random"><i class="fa fa-check"></i><b>1.5.4</b> Random</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="pendahuluan.html"><a href="pendahuluan.html#pertanyaan"><i class="fa fa-check"></i><b>1.6</b> Pertanyaan</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="smoothing.html"><a href="smoothing.html"><i class="fa fa-check"></i><b>2</b> Smoothing</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="smoothing.html"><a href="smoothing.html#simple-exponential-smoothing"><i class="fa fa-check"></i><b>2.1</b> Simple Exponential Smoothing</a></li>
+<li class="chapter" data-level="2.2" data-path="smoothing.html"><a href="smoothing.html#holt-exponential-smoothing"><i class="fa fa-check"></i><b>2.2</b> Holt Exponential Smoothing</a></li>
+<li class="chapter" data-level="2.3" data-path="smoothing.html"><a href="smoothing.html#holt-expontential-seasonal-smoothing"><i class="fa fa-check"></i><b>2.3</b> Holt Expontential Seasonal Smoothing</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="penggunaan-least-square.html"><a href="penggunaan-least-square.html"><i class="fa fa-check"></i><b>3</b> Penggunaan Least Square</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="penggunaan-least-square.html"><a href="penggunaan-least-square.html#autokorelasi"><i class="fa fa-check"></i><b>3.1</b> Autokorelasi</a></li>
+<li class="chapter" data-level="3.2" data-path="penggunaan-least-square.html"><a href="penggunaan-least-square.html#heterokedatisitas"><i class="fa fa-check"></i><b>3.2</b> Heterokedatisitas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="moving-average.html"><a href="moving-average.html"><i class="fa fa-check"></i><b>4</b> Moving Average</a></li>
+<li class="chapter" data-level="5" data-path="model-arima.html"><a href="model-arima.html"><i class="fa fa-check"></i><b>5</b> Model ARIMA</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="model-arima.html"><a href="model-arima.html#arima-r"><i class="fa fa-check"></i><b>5.1</b> ARIMA R</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="model-arima.html"><a href="model-arima.html#pertanyaan-1"><i class="fa fa-check"></i><b>5.1.1</b> Pertanyaan</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="arch-model.html"><a href="arch-model.html"><i class="fa fa-check"></i><b>6</b> ARCH Model</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="arch-model.html"><a href="arch-model.html#model-garch"><i class="fa fa-check"></i><b>6.1</b> Model GARCH</a></li>
+<li class="chapter" data-level="6.2" data-path="arch-model.html"><a href="arch-model.html#langkah-uji-garch"><i class="fa fa-check"></i><b>6.2</b> Langkah UJi GARCH</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="arch-model.html"><a href="arch-model.html#pertanyaan-2"><i class="fa fa-check"></i><b>6.2.1</b> Pertanyaan</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="cob-chap.html"><a href="cob-chap.html"><i class="fa fa-check"></i><b>7</b> Cob Chap</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Analisis Time Series dengan RStudio</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="arch-model" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Bab 6</span> ARCH Model<a href="arch-model.html#arch-model" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Pada satu kasus terjadi saja yang namanya gangguan vilatilitas. Metode ini ditemukan karena danya data harga saham yang begitu volatilitas . Harga saham adalah suatu data yang sangat volatilitas karena dalam waktu seperdetik saja maka harga saham itu bisa berubah. Dalam hitungan jam saja harga saham akan melonkjak dengan tajam yang dapat memberikan keuntungan bagi beberapa investor dan juga memberikan keuntungan bagi sebagai investor lainnya.</p>
+<p>Semua data bergerak variasi artinya tidak ada data yang bergerak begitu mendatar saja seperti garis lurus. Dari waktu ke waktu tidak ada peningkatan maupun penurunan. Ada beberapa data yang model ini seperti saham yang tidak terkenal Kita bisa melihat harga saham beberapa peruisahaan yang tidak likuid (Ilikuid) mempunyai pergerakan yang “sangat stabil”. Hal ini disebabkan tidak adanya pergerakan.</p>
+<p>Masalah isu yang sangat utama dalam metode ini adalah volatilitias atau keragaman yang sangat tinggi dari beberapa jenis data. Dengan adanya vilatilitas yang beragam akan menyebabakan estimasi galat E(ε)≠0. Hal ini tentu tidak bisa menjadikan estimasi tepat. Untuk itu perlu suatu model untuk mengatasi permasalahan error ini. Kalau error yang tidak konstan ini dipaksakan untuk diterapakan maka hasil estimasi menjadi bias, atau menjadi kemungkinan salah yang besar.</p>
+<p>Untuk melakukan metode ARCH maka kita bisa menggunakan
+Uji Box-Jenkins
+Uji ARCH Test</p>
+<div id="model-garch" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Model GARCH<a href="arch-model.html#model-garch" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Adalah Engel yang menemukan metode ini pada tahun 1982 dengan inspirasi atas kondisi data yang cenderung Volatile. vilatiel kondisi tidak beraturan dan cenderung berubah . Data volatile pada praktik manajemen risiko, pemilihan portofolio, dan</p>
+<p>volatile dengan variance
+volatile</p>
+<p>Borilsav menggunakan GARCH dengan menggunakan residual</p>
+<p>volatile kondisi ketidakstabilan, cenderung bervariasi dan sulit diperkirakan
+implikasi data volatilitas tinggi , cenderung bervariasi sulit diperkirakan</p>
+<p>Model ARCH
+Tentu tidak semua data cocok dengan menggunakan data model ARCH seperti ini. Kalau data dalam keadaan “baik-baik” saja maka kita tidak perlu untuk juga untuk menggunakan hal seperti ini. Ada data yang cenderung musiman dan ada juga data yang dapat mudah diramalakan dengan metide ARIMA saja.</p>
+<p>Identifikasi dengan metode Box Jenkins
+adanya efek ARCH dari indentifikasi
+2. pola residual dengan collergam menggunakan ARCH multiplier Langrange
+Estimasi model persamaan ragam
+<span class="math display">\[ Z_t=V_t √(α_0+α_1 Z_(t-1)^2 )\]</span> dengan nilai α0 &gt; 1 dan 0&lt;α1&lt;1</p>
+<p>pengujian estimasi error pengujian keacakan residual dan efek ARCH</p>
+<p>Peramalan menggunakan peramalan terbaik dengan menggunakan RMSE MAE dan MAPE</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="arch-model.html#cb79-1" tabindex="-1"></a><span class="fu">library</span>(FinTS)</span></code></pre></div>
+<pre><code>## Warning: package &#39;FinTS&#39; was built under R version
+## 4.3.1</code></pre>
+<pre><code>## 
+## Attaching package: &#39;FinTS&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:forecast&#39;:
+## 
+##     Acf</code></pre>
+<div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="arch-model.html#cb83-1" tabindex="-1"></a><span class="fu">ArchTest</span>(<span class="fu">residuals</span>(modelarimalynx))</span></code></pre></div>
+<pre><code>## 
+##  ARCH LM-test; Null hypothesis: no ARCH effects
+## 
+## data:  residuals(modelarimalynx)
+## Chi-squared = 13.226, df = 12, p-value = 0.3528</code></pre>
+<p>Hasil perhitungan menunjukkan tdiak adanya heteroskedatisitas maka untu uji GARCH juga tidak dipelrukan. KIni dengan dmeikian kemungkinan menggunakan SARIMA yakni Seasonal ARIMA yang emmpertimbangkan seasonal</p>
+</div>
+<div id="langkah-uji-garch" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Langkah UJi GARCH<a href="arch-model.html#langkah-uji-garch" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>Memilih data set yang mempunyai volatilitas yang tinggi</p></li>
+<li><p>TRansformasi daata dengan log return agar data stabil</p></li>
+<li><p>Melakukan uji staioner dengan menggunakan ADF Test</p></li>
+<li><p>Diagnostik model untuk menguji REsidual</p></li>
+<li><p>Prediksi atau forecast menngunakan rugarch</p></li>
+</ol>
+<p>KIta akan terapkan pada data Air Passenger yang ada di sana</p>
+<div class="sourceCode" id="cb85"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb85-1"><a href="arch-model.html#cb85-1" tabindex="-1"></a><span class="co"># Data EuStockMarkets</span></span>
+<span id="cb85-2"><a href="arch-model.html#cb85-2" tabindex="-1"></a><span class="fu">data</span>(<span class="st">&quot;EuStockMarkets&quot;</span>)</span>
+<span id="cb85-3"><a href="arch-model.html#cb85-3" tabindex="-1"></a></span>
+<span id="cb85-4"><a href="arch-model.html#cb85-4" tabindex="-1"></a><span class="co"># Ambil salah satu indeks saham, misalnya DAX (Jerman)</span></span>
+<span id="cb85-5"><a href="arch-model.html#cb85-5" tabindex="-1"></a>dax <span class="ot">&lt;-</span> EuStockMarkets[, <span class="st">&quot;DAX&quot;</span>]</span>
+<span id="cb85-6"><a href="arch-model.html#cb85-6" tabindex="-1"></a></span>
+<span id="cb85-7"><a href="arch-model.html#cb85-7" tabindex="-1"></a><span class="co"># Plot data</span></span>
+<span id="cb85-8"><a href="arch-model.html#cb85-8" tabindex="-1"></a><span class="fu">plot</span>(dax, <span class="at">main =</span> <span class="st">&quot;DAX Index&quot;</span>, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Price&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<div class="sourceCode" id="cb86"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb86-1"><a href="arch-model.html#cb86-1" tabindex="-1"></a><span class="co"># Hitung log-return untuk membuat data stasioner</span></span>
+<span id="cb86-2"><a href="arch-model.html#cb86-2" tabindex="-1"></a>dax_return <span class="ot">&lt;-</span> <span class="fu">diff</span>(<span class="fu">log</span>(dax))  <span class="co"># Logarithmic return</span></span>
+<span id="cb86-3"><a href="arch-model.html#cb86-3" tabindex="-1"></a><span class="fu">plot</span>(dax_return, <span class="at">main =</span> <span class="st">&quot;Log Return of DAX&quot;</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>, <span class="at">ylab =</span> <span class="st">&quot;Log Return&quot;</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-19-2.png" width="672" /></p>
+<p>dalam analsisi ini kita bisa membuat evaluasi model tersebt karena hal itu dapat untuk membuat kita yakin dengan hasil yang kta peroleh.</p>
+<div class="sourceCode" id="cb87"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb87-1"><a href="arch-model.html#cb87-1" tabindex="-1"></a><span class="co"># Uji ADF</span></span>
+<span id="cb87-2"><a href="arch-model.html#cb87-2" tabindex="-1"></a><span class="fu">adf.test</span>(dax_return, <span class="at">alternative =</span> <span class="st">&quot;stationary&quot;</span>)</span></code></pre></div>
+<pre><code>## Warning in adf.test(dax_return, alternative =
+## &quot;stationary&quot;): p-value smaller than printed p-value</code></pre>
+<pre><code>## 
+##  Augmented Dickey-Fuller Test
+## 
+## data:  dax_return
+## Dickey-Fuller = -11.105, Lag order = 12, p-value
+## = 0.01
+## alternative hypothesis: stationary</code></pre>
+<p>setelah itu kita bisa melakukan untuk pemodelan model GARCH seperti</p>
+<div class="sourceCode" id="cb90"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb90-1"><a href="arch-model.html#cb90-1" tabindex="-1"></a><span class="fu">library</span>(rugarch)</span></code></pre></div>
+<pre><code>## Warning: package &#39;rugarch&#39; was built under R version
+## 4.3.3</code></pre>
+<pre><code>## Loading required package: parallel</code></pre>
+<pre><code>## 
+## Attaching package: &#39;rugarch&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:stats&#39;:
+## 
+##     sigma</code></pre>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="arch-model.html#cb95-1" tabindex="-1"></a><span class="fu">library</span>(tseries)</span>
+<span id="cb95-2"><a href="arch-model.html#cb95-2" tabindex="-1"></a><span class="fu">library</span>(quantmod)</span></code></pre></div>
+<pre><code>## Warning: package &#39;quantmod&#39; was built under R version
+## 4.3.1</code></pre>
+<pre><code>## Loading required package: TTR</code></pre>
+<pre><code>## Warning: package &#39;TTR&#39; was built under R version 4.3.1</code></pre>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="arch-model.html#cb99-1" tabindex="-1"></a><span class="co"># Definisikan spesifikasi model GARCH(1,1)</span></span>
+<span id="cb99-2"><a href="arch-model.html#cb99-2" tabindex="-1"></a>garch_spec <span class="ot">&lt;-</span> <span class="fu">ugarchspec</span>(</span>
+<span id="cb99-3"><a href="arch-model.html#cb99-3" tabindex="-1"></a>  <span class="at">variance.model =</span> <span class="fu">list</span>(<span class="at">model =</span> <span class="st">&quot;sGARCH&quot;</span>, <span class="at">garchOrder =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)),</span>
+<span id="cb99-4"><a href="arch-model.html#cb99-4" tabindex="-1"></a>  <span class="at">mean.model =</span> <span class="fu">list</span>(<span class="at">armaOrder =</span> <span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">0</span>), <span class="at">include.mean =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb99-5"><a href="arch-model.html#cb99-5" tabindex="-1"></a>  <span class="at">distribution.model =</span> <span class="st">&quot;norm&quot;</span>  <span class="co"># Distribusi error normal</span></span>
+<span id="cb99-6"><a href="arch-model.html#cb99-6" tabindex="-1"></a>)</span>
+<span id="cb99-7"><a href="arch-model.html#cb99-7" tabindex="-1"></a></span>
+<span id="cb99-8"><a href="arch-model.html#cb99-8" tabindex="-1"></a><span class="co"># Estimasi model GARCH</span></span>
+<span id="cb99-9"><a href="arch-model.html#cb99-9" tabindex="-1"></a>garch_fit <span class="ot">&lt;-</span> <span class="fu">ugarchfit</span>(<span class="at">spec =</span> garch_spec, <span class="at">data =</span> dax_return)</span>
+<span id="cb99-10"><a href="arch-model.html#cb99-10" tabindex="-1"></a></span>
+<span id="cb99-11"><a href="arch-model.html#cb99-11" tabindex="-1"></a><span class="co"># Ringkasan hasil estimasi</span></span>
+<span id="cb99-12"><a href="arch-model.html#cb99-12" tabindex="-1"></a><span class="fu">print</span>(garch_fit)</span></code></pre></div>
+<pre><code>## 
+## *---------------------------------*
+## *          GARCH Model Fit        *
+## *---------------------------------*
+## 
+## Conditional Variance Dynamics    
+## -----------------------------------
+## GARCH Model  : sGARCH(1,1)
+## Mean Model   : ARFIMA(0,0,0)
+## Distribution : norm 
+## 
+## Optimal Parameters
+## ------------------------------------
+##         Estimate  Std. Error  t value Pr(&gt;|t|)
+## mu      0.000656    0.000215   3.0447 0.002329
+## omega   0.000005    0.000000  12.6841 0.000000
+## alpha1  0.067762    0.005383  12.5892 0.000000
+## beta1   0.888989    0.008284 107.3101 0.000000
+## 
+## Robust Standard Errors:
+##         Estimate  Std. Error  t value Pr(&gt;|t|)
+## mu      0.000656    0.000248   2.6456 0.008155
+## omega   0.000005    0.000001   3.1815 0.001465
+## alpha1  0.067762    0.009490   7.1404 0.000000
+## beta1   0.888989    0.015849  56.0907 0.000000
+## 
+## LogLikelihood : 5966.213 
+## 
+## Information Criteria
+## ------------------------------------
+##                     
+## Akaike       -6.4144
+## Bayes        -6.4025
+## Shibata      -6.4144
+## Hannan-Quinn -6.4100
+## 
+## Weighted Ljung-Box Test on Standardized Residuals
+## ------------------------------------
+##                         statistic p-value
+## Lag[1]                     0.1975  0.6567
+## Lag[2*(p+q)+(p+q)-1][2]    0.3452  0.7711
+## Lag[4*(p+q)+(p+q)-1][5]    0.7953  0.9040
+## d.o.f=0
+## H0 : No serial correlation
+## 
+## Weighted Ljung-Box Test on Standardized Squared Residuals
+## ------------------------------------
+##                         statistic p-value
+## Lag[1]                     0.1210  0.7279
+## Lag[2*(p+q)+(p+q)-1][5]    0.3371  0.9797
+## Lag[4*(p+q)+(p+q)-1][9]    0.5001  0.9985
+## d.o.f=2
+## 
+## Weighted ARCH LM Tests
+## ------------------------------------
+##             Statistic Shape Scale P-Value
+## ARCH Lag[3]   0.01512 0.500 2.000  0.9021
+## ARCH Lag[5]   0.32095 1.440 1.667  0.9346
+## ARCH Lag[7]   0.37536 2.315 1.543  0.9882
+## 
+## Nyblom stability test
+## ------------------------------------
+## Joint Statistic:  30.659
+## Individual Statistics:             
+## mu     0.7070
+## omega  0.7168
+## alpha1 0.2935
+## beta1  0.1076
+## 
+## Asymptotic Critical Values (10% 5% 1%)
+## Joint Statistic:          1.07 1.24 1.6
+## Individual Statistic:     0.35 0.47 0.75
+## 
+## Sign Bias Test
+## ------------------------------------
+##                    t-value   prob sig
+## Sign Bias           1.4167 0.1567    
+## Negative Sign Bias  0.7978 0.4251    
+## Positive Sign Bias  0.4236 0.6719    
+## Joint Effect        4.2196 0.2387    
+## 
+## 
+## Adjusted Pearson Goodness-of-Fit Test:
+## ------------------------------------
+##   group statistic p-value(g-1)
+## 1    20     97.18    1.729e-12
+## 2    30    128.57    1.690e-14
+## 3    40    130.87    7.467e-12
+## 4    50    193.10    5.368e-19
+## 
+## 
+## Elapsed time : 0.3588829</code></pre>
+<p>Kemudian baru kita evaluasi model tersebut adalah dengan beberapa grafik yang ada. Dalam grafik ini diberikan</p>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="arch-model.html#cb101-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mar =</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">4</span>, <span class="dv">2</span>, <span class="dv">1</span>))  <span class="co"># Format: c(bawah, kiri, atas, kanan)</span></span>
+<span id="cb101-2"><a href="arch-model.html#cb101-2" tabindex="-1"></a><span class="co"># Plot residual standar</span></span>
+<span id="cb101-3"><a href="arch-model.html#cb101-3" tabindex="-1"></a><span class="fu">plot</span>(garch_fit, <span class="at">which =</span> <span class="st">&quot;all&quot;</span>)</span></code></pre></div>
+<pre><code>## 
+## please wait...calculating quantiles...</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<div id="pertanyaan-2" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Pertanyaan<a href="arch-model.html#pertanyaan-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p>Mengapa kita menggunakan ARCH?</p></li>
+<li><p>APa saja langkah untuk GARCH?</p></li>
+<li><p>Apa masalah inti dalam GRACH?</p></li>
+</ol>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="model-arima.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cob-chap.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-parts.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

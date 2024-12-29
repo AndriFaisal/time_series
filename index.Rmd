@@ -1,0 +1,27 @@
+--- 
+title: "Analisis Time Series dengan RStudio"
+author: "Andri Faisal"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is a minimal example of using the bookdown package to write a book.
+  The HTML output format for this example is bookdown::gitbook,
+    number_sections: true
+  fig_caption: true
+  set in the _output.yml file.
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# Tentang {-}
+
+Buku ini mengenai analisis time series dengan menggunakan Rstudio
+
+## Usage {-}
+
+Penggunaan buku ini diperuntukkkan bagi mahasiswa program sarjana baik ilmu murni maupun ilmu terapan seperti bisnis.
+

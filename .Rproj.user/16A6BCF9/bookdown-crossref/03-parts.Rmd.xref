@@ -1,0 +1,29 @@
+h1:pendahuluan Pendahuluan
+h2:semua-antisipasi Semua antisipasi
+h2:jangka-waktu-peramalan Jangka waktu Peramalan
+h2:persiapan-data-rstudio Persiapan Data Rstudio
+h2:sifat-data-berkala Sifat Data Berkala
+h3:random-walk Random Walk
+fig:bitcoints Grafik Bitcoin
+h2:decomposes Decomposes
+h3:trend Trend
+h3:musiman Musiman
+h3:irregular Irregular
+h3:random Random
+h2:pertanyaan Pertanyaan
+h1:smoothing Smoothing
+h2:simple-exponential-smoothing Simple Exponential Smoothing
+h2:holt-exponential-smoothing Holt Exponential Smoothing
+h2:holt-expontential-seasonal-smoothing Holt Expontential Seasonal Smoothing
+h1:penggunaan-least-square Penggunaan Least Square
+h2:autokorelasi Autokorelasi
+h2:heterokedatisitas Heterokedatisitas
+h1:moving-average Moving Average
+h1:model-arima Model ARIMA
+h2:arima-r ARIMA R
+h3:pertanyaan-1 Pertanyaan
+h1:arch-model ARCH Model
+h2:model-garch Model GARCH
+h2:langkah-uji-garch Langkah UJi GARCH
+h3:pertanyaan-2 Pertanyaan
+

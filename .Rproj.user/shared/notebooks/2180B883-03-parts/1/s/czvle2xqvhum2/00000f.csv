@@ -1,0 +1,2 @@
+"0","# Histogram residuals"
+"0","hist(modellm$residuals, main = ""Histogram of Residuals"", xlab = ""Residuals"")"

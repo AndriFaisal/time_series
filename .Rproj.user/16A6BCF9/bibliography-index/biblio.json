@@ -1,0 +1,540 @@
+{
+    "sources": [
+        {
+            "URL": "http://yihui.org/knitr/",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "edition": "2nd",
+            "id": "xie2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1498716963",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Dynamic documents with R and knitr",
+            "type": "book"
+        },
+        {
+            "URL": "https://www.rpubs.com/AurelliaChristie/time-series-and-stock-analysis",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2020,
+                        11,
+                        6
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Christie",
+                    "given": "Aurelia"
+                }
+            ],
+            "id": "Christie2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "Accesed: 2024-12-10",
+            "title": "Analisis time series",
+            "type": "webpage"
+        },
+        {
+            "URL": "https://www.tu-chemnitz.de/mathematik/fima/rubsc/lehre/timeseries/pdf/coghlan.pdf",
+            "accessed": {
+                "date-parts": [
+                    [
+                        2018,
+                        9,
+                        10
+                    ]
+                ]
+            },
+            "author": [
+                {
+                    "family": "Coghlan",
+                    "given": "Avril"
+                }
+            ],
+            "id": "Coghlan2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "Accesed: 2024-12-10",
+            "publisher": "Technize Universiteit Chemnitz",
+            "title": "Little book of time series",
+            "type": "book"
+        },
+        {
+            "URL": "http://yihui.org/knitr/",
+            "author": [
+                {
+                    "family": "Xie",
+                    "given": "Yihui"
+                }
+            ],
+            "edition": "2nd",
+            "id": "xie2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1498716963",
+            "publisher": "Chapman; Hall/CRC",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Dynamic documents with R and knitr",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Heumann",
+                    "given": "Christian"
+                },
+                {
+                    "family": "Shalabih",
+                    "given": "Michael Schomaker"
+                }
+            ],
+            "edition": "2nd",
+            "id": "Heumann2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "note": "ISBN 978-3-319-46162-5",
+            "publisher": "Springer",
+            "publisher-place": "Cham, Switzerland",
+            "title": "Intoduction statistics",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Spiegel",
+                    "given": "Murray R."
+                },
+                {
+                    "family": "Stephen",
+                    "given": "Larry J."
+                }
+            ],
+            "edition": "4rd",
+            "id": "Spiegel2015",
+            "issued": {
+                "date-parts": [
+                    [
+                        2015
+                    ]
+                ]
+            },
+            "note": "ISBN 0-07-148584-8",
+            "publisher": "Mac Graw Hill",
+            "publisher-place": "New York",
+            "title": "Statistics",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Ryan",
+                    "given": "Thomas P."
+                }
+            ],
+            "edition": "1st",
+            "id": "Ryan2013",
+            "issued": {
+                "date-parts": [
+                    [
+                        2013
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1-118-43760-5",
+            "publisher": "John Wiley; Sons",
+            "publisher-place": "Boca Raton, Florida",
+            "title": "Sample size determination and power",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Wooldrige",
+                    "given": "Jefreey"
+                }
+            ],
+            "edition": "5th",
+            "id": "Wooldridge2012",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1-111-53104-1",
+            "publisher": "Cengage",
+            "publisher-place": "Mason, OH",
+            "title": "Introducty econometrics",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Holmes",
+                    "given": "Alexander"
+                },
+                {
+                    "family": "Illowsky",
+                    "given": "Barbarra"
+                },
+                {
+                    "family": "Dean",
+                    "given": "Susan"
+                }
+            ],
+            "edition": "2nd",
+            "id": "Holmes2018",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1-947172-47-0",
+            "publisher": "OpenStax",
+            "publisher-place": "Houston, Texas",
+            "title": "Introduction business statistics",
+            "type": "book"
+        },
+        {
+            "URL": "https://hastie.su.domains/ISLR2/ISLRv2_corrected_June_2023.pdf.download.html",
+            "author": [
+                {
+                    "family": "James",
+                    "given": "Gareth"
+                },
+                {
+                    "family": "Witten",
+                    "given": "Daniella"
+                },
+                {
+                    "family": "Hastie",
+                    "given": "Trevor"
+                },
+                {
+                    "family": "Thibsarani",
+                    "given": "Robert"
+                }
+            ],
+            "edition": "2nd",
+            "id": "James2023",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "publisher": "Springer",
+            "publisher-place": "Cham, Switzerland",
+            "title": "An intoduction to statistics learning",
+            "type": "book"
+        },
+        {
+            "URL": "https://www.r-bloggers.com/2015/09/how-to-perform-a-logistic-regression-in-r/",
+            "author": [
+                {
+                    "family": "Alice",
+                    "given": "Michy"
+                }
+            ],
+            "container-title": "R-Bloggers",
+            "id": "Alice2015",
+            "title": "How to perform logistic regression in r",
+            "type": ""
+        },
+        {
+            "URL": "https://www.researchgate.net/publication/326111304_MODUL_1_PROBABILITAS_DAN_STATISTIKA?channel=doi&linkId=5b39ad41a6fdcc8506e72093&showFulltext=true",
+            "author": [
+                {
+                    "family": "Marliana",
+                    "given": "Reny Rian"
+                }
+            ],
+            "edition": "1st",
+            "id": "Marliana2017",
+            "issued": {
+                "date-parts": [
+                    [
+                        2017
+                    ]
+                ]
+            },
+            "publisher-place": "Sumedang, Jawa Barat",
+            "title": "Pratktikum statistika dan probabilitas",
+            "type": "book"
+        },
+        {
+            "URL": "https://doi.org/10.55122/mediastima.v26i2.125",
+            "author": [
+                {
+                    "family": "Faisal",
+                    "given": "Andri"
+                },
+                {
+                    "family": "Yulianto",
+                    "given": "Kampono"
+                }
+            ],
+            "container-title": "Mediastima",
+            "id": "Faisal2020",
+            "issue": "2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "title": "HUBUNGAN CAPITAL STRUCTURE DENGAN NILAI PERUSAHAAN PADA PERUSAHAAN PERTAMBANGAN BATUBARA YANG TERDAFTAR DI BURSA EFEK INDONESIA 2014-2019",
+            "type": "article-journal",
+            "volume": "26"
+        },
+        {
+            "author": [
+                {
+                    "family": "Soepranto",
+                    "given": "J"
+                }
+            ],
+            "edition": "1st",
+            "id": "Soepranto1984",
+            "issued": {
+                "date-parts": [
+                    [
+                        1984
+                    ]
+                ]
+            },
+            "note": "ISBN 99789794504789",
+            "publisher": "Lembaga Penerbit Fakultas Ekonomi Universitas Indonesia",
+            "publisher-place": "Depok, Jawa Barat",
+            "title": "Ekonometrika jilid II",
+            "type": "book"
+        },
+        {
+            "URL": "https://rpubs.com/rizkia/time-series-analysis",
+            "author": [
+                {
+                    "family": "Ananda",
+                    "given": "Rizki"
+                }
+            ],
+            "id": "RPubs",
+            "issued": {
+                "date-parts": [
+                    [
+                        2023
+                    ]
+                ]
+            },
+            "note": "Diakses 6 Desember 2024",
+            "title": "Timeseries forecasting",
+            "type": ""
+        },
+        {
+            "author": [
+                {
+                    "family": "Hayes",
+                    "given": "Andrew F."
+                }
+            ],
+            "edition": "3rd",
+            "id": "Hayes2020",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "ISBN 978-1498716963",
+            "publisher": "Guilford Press",
+            "publisher-place": "Suite 1200, New York",
+            "title": "Introduction mediation, moderation, and conditional process analysis",
+            "type": "book"
+        },
+        {
+            "URL": "10.30954/0424-2513.4.2018.5",
+            "author": [
+                {
+                    "family": "Majid",
+                    "given": "Rumana"
+                },
+                {
+                    "family": "Mir",
+                    "given": "Shakel Ahmad"
+                }
+            ],
+            "container-title": "Economic Affairs",
+            "id": "Majid2018",
+            "issue": "4",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "title": "Advances in statistical forecasting methods: An overview",
+            "title-short": "Advances in statistical forecasting methods",
+            "type": "article-journal",
+            "volume": "63"
+        },
+        {
+            "author": [
+                {
+                    "family": "Yamane",
+                    "given": "Taro"
+                }
+            ],
+            "edition": "3rd",
+            "id": "Yamane1973",
+            "issued": {
+                "date-parts": [
+                    [
+                        1973
+                    ]
+                ]
+            },
+            "note": "ISBN 06-0473113-4",
+            "publisher": "Harper; Row, Publishers",
+            "publisher-place": "New York, New York",
+            "title": "Statistics, an intruducy analysis",
+            "type": "book"
+        },
+        {
+            "URL": "https://rpubs.com/s3759607/599311",
+            "author": [
+                {
+                    "dropping-particle": "gWei",
+                    "family": "Zhan"
+                }
+            ],
+            "id": "RPubs2",
+            "issued": {
+                "date-parts": [
+                    [
+                        2020
+                    ]
+                ]
+            },
+            "note": "Diakses 19 Desember 2024",
+            "title": "Modelling for time series",
+            "type": ""
+        },
+        {
+            "ISSN": "0169-7161",
+            "author": [
+                {
+                    "family": "A. Ian Macleod"
+                },
+                {
+                    "family": "Hao You"
+                },
+                {
+                    "family": "Mahdi",
+                    "given": "Essam"
+                }
+            ],
+            "container-title": "Economic Affairs",
+            "id": "Mcleod2012",
+            "issued": {
+                "date-parts": [
+                    [
+                        2012
+                    ]
+                ]
+            },
+            "title": "Time series analysis with r",
+            "type": "article-journal",
+            "volume": "30"
+        },
+        {
+            "author": [
+                {
+                    "family": "Neusser",
+                    "given": "Klaus"
+                }
+            ],
+            "edition": "1st",
+            "id": "Neusser2016",
+            "issued": {
+                "date-parts": [
+                    [
+                        2016
+                    ]
+                ]
+            },
+            "note": "978-3-319-32862-1",
+            "publisher": "Springer",
+            "publisher-place": "Bern, Switzerland",
+            "title": "Time series econometrics",
+            "type": "book"
+        },
+        {
+            "author": [
+                {
+                    "family": "Hyndman",
+                    "given": "Robin John"
+                },
+                {
+                    "family": "Athanasopoulos",
+                    "given": "George"
+                }
+            ],
+            "edition": "2nd",
+            "id": "3b1355aedd1041f1853e609a410576f3",
+            "issued": {
+                "date-parts": [
+                    [
+                        2018
+                    ]
+                ]
+            },
+            "publisher": "OTexts",
+            "publisher-place": "Australia",
+            "title": "Forecasting: Principles and practice",
+            "title-short": "Forecasting",
+            "type": "book"
+        }
+    ],
+    "project_biblios": [
+        "book.bib"
+    ]
+}

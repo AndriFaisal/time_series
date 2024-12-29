@@ -1,0 +1,6 @@
+"0","par(mar = c(4, 4, 2, 1))  # Format: c(bawah, kiri, atas, kanan)"
+"0","# Plot residual standar"
+"0","plot(garch_fit, which = ""all"")"
+"1","
+please wait...calculating quantiles...
+"

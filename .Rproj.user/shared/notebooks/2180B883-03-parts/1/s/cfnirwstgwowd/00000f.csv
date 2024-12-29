@@ -1,0 +1,8 @@
+"0","# Data EuStockMarkets"
+"0","data(""EuStockMarkets"")"
+"0",""
+"0","# Ambil salah satu indeks saham, misalnya DAX (Jerman)"
+"0","dax <- EuStockMarkets[, ""DAX""]"
+"0",""
+"0","# Plot data"
+"0","plot(dax, main = ""DAX Index"", col = ""blue"", ylab = ""Price"")"

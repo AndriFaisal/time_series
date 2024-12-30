@@ -279,9 +279,9 @@ Apakah kita bisa menggunakan ARIMA biasa dengan ARIMA Seasonal</p>
 <div id="arima-r" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> ARIMA R<a href="model-arima.html#arima-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Model ini adalah model yang sangat baik untuk kita kerjakan karena dengan model ini kita bisa mendapatkan suatua prediksi yang tepat untuk peramalan dalam time series. Dalam model ini maka kita</p>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="model-arima.html#cb71-1" tabindex="-1"></a><span class="fu">library</span>(forecast)</span>
-<span id="cb71-2"><a href="model-arima.html#cb71-2" tabindex="-1"></a><span class="fu">library</span>(tseries)</span>
-<span id="cb71-3"><a href="model-arima.html#cb71-3" tabindex="-1"></a><span class="fu">adf.test</span>(lynx)</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="model-arima.html#cb50-1" tabindex="-1"></a><span class="fu">library</span>(forecast)</span>
+<span id="cb50-2"><a href="model-arima.html#cb50-2" tabindex="-1"></a><span class="fu">library</span>(tseries)</span>
+<span id="cb50-3"><a href="model-arima.html#cb50-3" tabindex="-1"></a><span class="fu">adf.test</span>(lynx)</span></code></pre></div>
 <pre><code>## Warning in adf.test(lynx): p-value smaller than printed
 ## p-value</code></pre>
 <pre><code>## 
@@ -291,15 +291,15 @@ Apakah kita bisa menggunakan ARIMA biasa dengan ARIMA Seasonal</p>
 ## Dickey-Fuller = -6.3068, Lag order = 4, p-value =
 ## 0.01
 ## alternative hypothesis: stationary</code></pre>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="model-arima.html#cb74-1" tabindex="-1"></a><span class="fu">acf</span>(lynx,<span class="at">lag=</span><span class="dv">100</span>)</span></code></pre></div>
-<p><img src="_main_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="model-arima.html#cb53-1" tabindex="-1"></a><span class="fu">acf</span>(lynx,<span class="at">lag=</span><span class="dv">100</span>)</span></code></pre></div>
+<p><img src="docsunnamed-chunk-15-1.png" width="672" /></p>
 <p>Setelah kita mengetahui kestationeran dari data maja kita bisa melakukan beberapa hal yakni dengan melihat model yang paling baik untuk metode ARIMA ini.
 Salah satu bentuk peramalan data yang berbentuk data berkala atau (Time Series) adalah ARIMA. Metode ini yang menggabungkan komponen autoregresi (p), difference (d) dan juga Rata-rata bergerak (Moving Average) yang digambarkan dengan q.</p>
 <p>Metode ini sangat baik dan adalah bentuk penyermpurnaan. Dengan adanya metode yang baru bahkan berani bilang kalau metode ini lebih baik dari <em>Artificial Neural Network (ANN)</em> yang sidah terkenal dengan canggih sedemikian rupa.</p>
 <p>Banyak beberapa software yang digunakan untuk menduga ARIMA. Tentu saja sesuai judul kali ini penulis akan membuat suatu tutorial untuk membuat pengeloan data time series dengan ARIMA.</p>
 <p>Pertama kita akan membuat dahulu data. Kita bisa membuatnya dengan data manual kalau kita tidak merasa repot atau kita load dari txt dengan csv. Kemduian kita akan membuat data menjadi data time series</p>
-<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="model-arima.html#cb75-1" tabindex="-1"></a>modelarimalynx<span class="ot">&lt;-</span><span class="fu">auto.arima</span>(lynx)</span>
-<span id="cb75-2"><a href="model-arima.html#cb75-2" tabindex="-1"></a><span class="fu">summary</span>(modelarimalynx)</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="model-arima.html#cb54-1" tabindex="-1"></a>modelarimalynx<span class="ot">&lt;-</span><span class="fu">auto.arima</span>(lynx)</span>
+<span id="cb54-2"><a href="model-arima.html#cb54-2" tabindex="-1"></a><span class="fu">summary</span>(modelarimalynx)</span></code></pre></div>
 <pre><code>## Series: lynx 
 ## ARIMA(2,0,2) with non-zero mean 
 ## 
@@ -317,7 +317,7 @@ Salah satu bentuk peramalan data yang berbentuk data berkala atau (Time Series) 
 ##                  MAPE      MASE        ACF1
 ## Training set 140.7693 0.7343143 -0.01267127</code></pre>
 <p>Setelah dari model auto.arima ini kita akan mengecek reisual dengan beberapa uji dan menunjukan apaka model sudah sesuai</p>
-<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="model-arima.html#cb77-1" tabindex="-1"></a><span class="fu">checkresiduals</span>(modelarimalynx)</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="model-arima.html#cb56-1" tabindex="-1"></a><span class="fu">checkresiduals</span>(modelarimalynx)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
 <pre><code>## 
 ##  Ljung-Box test
@@ -326,8 +326,8 @@ Salah satu bentuk peramalan data yang berbentuk data berkala atau (Time Series) 
 ## Q* = 12.167, df = 6, p-value = 0.05834
 ## 
 ## Model df: 4.   Total lags used: 10</code></pre>
-<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="model-arima.html#cb79-1" tabindex="-1"></a><span class="co">#Uji Box Test</span></span>
-<span id="cb79-2"><a href="model-arima.html#cb79-2" tabindex="-1"></a><span class="fu">Box.test</span>(<span class="fu">residuals</span>(modelarimalynx), <span class="at">lag =</span> <span class="dv">10</span>, <span class="at">type =</span> <span class="st">&quot;Ljung-Box&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="model-arima.html#cb58-1" tabindex="-1"></a><span class="co">#Uji Box Test</span></span>
+<span id="cb58-2"><a href="model-arima.html#cb58-2" tabindex="-1"></a><span class="fu">Box.test</span>(<span class="fu">residuals</span>(modelarimalynx), <span class="at">lag =</span> <span class="dv">10</span>, <span class="at">type =</span> <span class="st">&quot;Ljung-Box&quot;</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Box-Ljung test
 ## 

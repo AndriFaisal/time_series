@@ -86,7 +86,7 @@ Ada beberapa data yang mempunyai sifat tidak bisa diramalkan pada sifat data ini
 Kalau tidak ada pola maka semuanya yang berjalan akan terus seperti acak acak. Mungkin suatu saat acak dalam jangakwa waktu yang tertentu akan tetapi suatu saat juga akan kembali berpola ada suatu saat tertentu. 
 Untuk mengetahui kalau data tersebut adalah random walk tentu ada yang menjadi alasam kenapa data tersebut masuk dalam random walk. Data yang termasuk dalam data walk harus diperiksa dulu dengan beberapa cara yakni \@ref(fig:bitcoints)
 
-```{r bitcoints, echo=FALSE, fig.cap="Grafik Bitcoin", fig.path="docs/_main_files/figure-html"}
+```{r bitcoints, echo=FALSE, fig.cap="Grafik Bitcoin", fig.path="docs"}
 library(ggplot2)
 autoplot(bitcoints) + 
   labs(title = "Plot Data xts", x = "Tanggal", y = "Nilai") +
@@ -488,7 +488,7 @@ Seberapaun metode yang kita gunakan itu akan berpulang lagi dengan kepada kita. 
 
 Model ini adalah model yang sangat baik untuk kita kerjakan karena dengan model ini kita bisa mendapatkan suatua prediksi yang tepat untuk peramalan dalam time series. Dalam model ini maka kita 
 
-```{r}
+```{r, fig.path="docs"}
 library(forecast)
 library(tseries)
 adf.test(lynx)

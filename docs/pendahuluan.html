@@ -598,18 +598,11 @@ Merubah data yang sudah ada di date frame dengan menggunakan format as.Date. dal
 <pre><code>## [1] &quot;2021-09-28&quot; &quot;2021-09-27&quot; &quot;2021-09-26&quot; &quot;2021-09-25&quot;
 ## [5] &quot;2021-09-24&quot; &quot;2021-09-23&quot;</code></pre>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="pendahuluan.html#cb14-1" tabindex="-1"></a><span class="co">#saya memanggil (call) dua paket zoo dan xts</span></span>
-<span id="cb14-2"><a href="pendahuluan.html#cb14-2" tabindex="-1"></a><span class="fu">library</span>(zoo)</span></code></pre></div>
-<pre><code>## Warning: package &#39;zoo&#39; was built under R version 4.3.1</code></pre>
-<pre><code>## 
-## Attaching package: &#39;zoo&#39;</code></pre>
-<pre><code>## The following objects are masked from &#39;package:base&#39;:
-## 
-##     as.Date, as.Date.numeric</code></pre>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="pendahuluan.html#cb18-1" tabindex="-1"></a><span class="fu">library</span>(xts)</span></code></pre></div>
-<pre><code>## Warning: package &#39;xts&#39; was built under R version 4.3.1</code></pre>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="pendahuluan.html#cb20-1" tabindex="-1"></a><span class="co">#setelah dapat data date membuat ts dengan harga close</span></span>
-<span id="cb20-2"><a href="pendahuluan.html#cb20-2" tabindex="-1"></a>bitcoints<span class="ot">=</span><span class="fu">xts</span>(bitcoin<span class="sc">$</span>Close.Last,bitcoindate)</span>
-<span id="cb20-3"><a href="pendahuluan.html#cb20-3" tabindex="-1"></a><span class="fu">head</span>(bitcoints)</span></code></pre></div>
+<span id="cb14-2"><a href="pendahuluan.html#cb14-2" tabindex="-1"></a><span class="fu">library</span>(zoo)</span>
+<span id="cb14-3"><a href="pendahuluan.html#cb14-3" tabindex="-1"></a><span class="fu">library</span>(xts)</span>
+<span id="cb14-4"><a href="pendahuluan.html#cb14-4" tabindex="-1"></a><span class="co">#setelah dapat data date membuat ts dengan harga close</span></span>
+<span id="cb14-5"><a href="pendahuluan.html#cb14-5" tabindex="-1"></a>bitcoints<span class="ot">=</span><span class="fu">xts</span>(bitcoin<span class="sc">$</span>Close.Last,bitcoindate)</span>
+<span id="cb14-6"><a href="pendahuluan.html#cb14-6" tabindex="-1"></a><span class="fu">head</span>(bitcoints)</span></code></pre></div>
 <pre><code>##              [,1]
 ## 2019-03-08 3865.9
 ## 2019-03-09 3944.4
@@ -629,33 +622,16 @@ Para ahli memang bisa menyediakan hal yang seperti itu dan ada banyak pilihan da
 Ada beberapa data yang mempunyai sifat tidak bisa diramalkan pada sifat data ini semuanya bergerak tidak beraturan. Saat ketika kita mengecek untuk terjadinya <em>random walk</em> di dalam data yang kita miliki. Seperti halnya kita berjalan terkadang namanya random walk yang tersebut adalah suatu jalan yang acak-acak tidak ada suatu pola.
 Kalau tidak ada pola maka semuanya yang berjalan akan terus seperti acak acak. Mungkin suatu saat acak dalam jangakwa waktu yang tertentu akan tetapi suatu saat juga akan kembali berpola ada suatu saat tertentu.
 Untuk mengetahui kalau data tersebut adalah random walk tentu ada yang menjadi alasam kenapa data tersebut masuk dalam random walk. Data yang termasuk dalam data walk harus diperiksa dulu dengan beberapa cara yakni <a href="pendahuluan.html#fig:bitcoints">1.1</a></p>
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version
-## 4.3.1</code></pre>
-<pre><code>## Want to understand how all the pieces fit
-## together? Read R for Data Science:
-## https://r4ds.had.co.nz/</code></pre>
 <div class="figure"><span style="display:block;" id="fig:bitcoints"></span>
-<img src="docs/_main_files/figure-htmlbitcoints-1.png" alt="Grafik Bitcoin" width="672" />
+<img src="docsbitcoints-1.png" alt="Grafik Bitcoin" width="672" />
 <p class="caption">
 Figure 1.1: Grafik Bitcoin
 </p>
 </div>
 <pre><code>Runs Test, ini adalah salah satu dari bentuk uji non parametrik yang dapat dilakukan dalam menilai apakah kumpulan (set) data tersebut masuk, Uji ini adalah hanya melihat perbedaan antara satu data dengan data yang lainnya hingg dapat dinilai untuk memastikan data ini random walk atau tidak. DAlam uji runs test ini kita akan melihat dengan uji hipotesis nol ada terjadinya random walk sedang Ha adalah tidak terjainya random walk atau menolak H0. Kalau nilai peluang (Probabilitas value) dari uji ini lebih kecil dari 0,05 (P&lt;0,05) maka nisa dipastikan kalau data tersebut terbebas dari time series </code></pre>
 <p>maka sebelum runs test uji stationer</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="pendahuluan.html#cb25-1" tabindex="-1"></a><span class="fu">library</span>(tseries)</span></code></pre></div>
-<pre><code>## Warning: package &#39;tseries&#39; was built under R version
-## 4.3.1</code></pre>
-<pre><code>## Registered S3 method overwritten by &#39;quantmod&#39;:
-##   method            from
-##   as.zoo.data.frame zoo</code></pre>
-<pre><code>## 
-##     &#39;tseries&#39; version: 0.10-54
-## 
-##     &#39;tseries&#39; is a package for time series
-##     analysis and computational finance.
-## 
-##     See &#39;library(help=&quot;tseries&quot;)&#39; for details.</code></pre>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="pendahuluan.html#cb29-1" tabindex="-1"></a><span class="fu">adf.test</span>(bitcoints)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="pendahuluan.html#cb17-1" tabindex="-1"></a><span class="fu">library</span>(tseries)</span>
+<span id="cb17-2"><a href="pendahuluan.html#cb17-2" tabindex="-1"></a><span class="fu">adf.test</span>(bitcoints)</span></code></pre></div>
 <pre><code>## 
 ##  Augmented Dickey-Fuller Test
 ## 
@@ -664,9 +640,9 @@ Figure 1.1: Grafik Bitcoin
 ## 0.6962
 ## alternative hypothesis: stationary</code></pre>
 <p>Terjadi non stationer dilakukan difference sekali</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="pendahuluan.html#cb31-1" tabindex="-1"></a>bitcoints2<span class="ot">&lt;-</span><span class="fu">diff</span>(bitcoints)</span>
-<span id="cb31-2"><a href="pendahuluan.html#cb31-2" tabindex="-1"></a>dbitcoints<span class="ot">&lt;-</span><span class="fu">na.remove</span>(bitcoints2)</span>
-<span id="cb31-3"><a href="pendahuluan.html#cb31-3" tabindex="-1"></a><span class="fu">adf.test</span>(dbitcoints)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="pendahuluan.html#cb19-1" tabindex="-1"></a>bitcoints2<span class="ot">&lt;-</span><span class="fu">diff</span>(bitcoints)</span>
+<span id="cb19-2"><a href="pendahuluan.html#cb19-2" tabindex="-1"></a>dbitcoints<span class="ot">&lt;-</span><span class="fu">na.remove</span>(bitcoints2)</span>
+<span id="cb19-3"><a href="pendahuluan.html#cb19-3" tabindex="-1"></a><span class="fu">adf.test</span>(dbitcoints)</span></code></pre></div>
 <pre><code>## Warning in adf.test(dbitcoints): p-value smaller than
 ## printed p-value</code></pre>
 <pre><code>## 
@@ -677,17 +653,10 @@ Figure 1.1: Grafik Bitcoin
 ## 0.01
 ## alternative hypothesis: stationary</code></pre>
 <p>kemudian uji run dengan data yang sudah ada di lakukan diferensns tersebut .</p>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="pendahuluan.html#cb34-1" tabindex="-1"></a><span class="co"># Runs Test untuk data xts</span></span>
-<span id="cb34-2"><a href="pendahuluan.html#cb34-2" tabindex="-1"></a><span class="fu">library</span>(randtests)</span></code></pre></div>
-<pre><code>## Warning: package &#39;randtests&#39; was built under R version
-## 4.3.3</code></pre>
-<pre><code>## 
-## Attaching package: &#39;randtests&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:tseries&#39;:
-## 
-##     runs.test</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="pendahuluan.html#cb38-1" tabindex="-1"></a>runs_test <span class="ot">&lt;-</span> <span class="fu">runs.test</span>(dbitcoints)</span>
-<span id="cb38-2"><a href="pendahuluan.html#cb38-2" tabindex="-1"></a><span class="fu">print</span>(runs_test)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="pendahuluan.html#cb22-1" tabindex="-1"></a><span class="co"># Runs Test untuk data xts</span></span>
+<span id="cb22-2"><a href="pendahuluan.html#cb22-2" tabindex="-1"></a><span class="fu">library</span>(randtests)</span>
+<span id="cb22-3"><a href="pendahuluan.html#cb22-3" tabindex="-1"></a>runs_test <span class="ot">&lt;-</span> <span class="fu">runs.test</span>(dbitcoints)</span>
+<span id="cb22-4"><a href="pendahuluan.html#cb22-4" tabindex="-1"></a><span class="fu">print</span>(runs_test)</span></code></pre></div>
 <pre><code>## 
 ##  Runs Test
 ## 
@@ -701,11 +670,11 @@ Uji lain yang bisa digunakan untuk menilai apakah terjadi atau tidaknya random w
 
 
 Uji Ljung Box. Uji ini dapat mendeteksi terjadinya random walk dengan cara menilai data deret berkala melalui Ljung Box Test. </code></pre>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="pendahuluan.html#cb41-1" tabindex="-1"></a><span class="co"># Konversi data xts ke vektor numerik</span></span>
-<span id="cb41-2"><a href="pendahuluan.html#cb41-2" tabindex="-1"></a>data_values <span class="ot">&lt;-</span>(dbitcoints)</span>
-<span id="cb41-3"><a href="pendahuluan.html#cb41-3" tabindex="-1"></a><span class="co"># Uji Ljung-Box</span></span>
-<span id="cb41-4"><a href="pendahuluan.html#cb41-4" tabindex="-1"></a>ljung_box_test <span class="ot">&lt;-</span> <span class="fu">Box.test</span>(data_values, <span class="at">lag =</span> <span class="dv">10</span>, <span class="at">type =</span> <span class="st">&quot;Ljung-Box&quot;</span>)</span>
-<span id="cb41-5"><a href="pendahuluan.html#cb41-5" tabindex="-1"></a><span class="fu">print</span>(ljung_box_test)</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="pendahuluan.html#cb25-1" tabindex="-1"></a><span class="co"># Konversi data xts ke vektor numerik</span></span>
+<span id="cb25-2"><a href="pendahuluan.html#cb25-2" tabindex="-1"></a>data_values <span class="ot">&lt;-</span>(dbitcoints)</span>
+<span id="cb25-3"><a href="pendahuluan.html#cb25-3" tabindex="-1"></a><span class="co"># Uji Ljung-Box</span></span>
+<span id="cb25-4"><a href="pendahuluan.html#cb25-4" tabindex="-1"></a>ljung_box_test <span class="ot">&lt;-</span> <span class="fu">Box.test</span>(data_values, <span class="at">lag =</span> <span class="dv">10</span>, <span class="at">type =</span> <span class="st">&quot;Ljung-Box&quot;</span>)</span>
+<span id="cb25-5"><a href="pendahuluan.html#cb25-5" tabindex="-1"></a><span class="fu">print</span>(ljung_box_test)</span></code></pre></div>
 <pre><code>## 
 ##  Box-Ljung test
 ## 
@@ -735,13 +704,8 @@ Bagian ini adalah nilai dari rata-rata urutan dari time series. Setiap pergeraka
 <div id="irregular" class="section level3 hasAnchor" number="1.5.3">
 <h3><span class="header-section-number">1.5.3</span> Irregular<a href="pendahuluan.html#irregular" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Dalam Rstudio penggunaan penguraian <em>(decompose)</em> time series tidak termasuk irregular. Maka harus ada perlakukan lagi untuk mengetahui Irregular tersebut</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="pendahuluan.html#cb44-1" tabindex="-1"></a><span class="fu">library</span>(forecast)</span></code></pre></div>
-<pre><code>## Warning: package &#39;forecast&#39; was built under R version
-## 4.3.1</code></pre>
-<pre><code>## This is forecast 8.21 
-##   Want to meet other forecasters? Join the International Institute of Forecasters:
-##   http://forecasters.org/</code></pre>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="pendahuluan.html#cb47-1" tabindex="-1"></a><span class="fu">decompose</span>(otr)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="pendahuluan.html#cb28-1" tabindex="-1"></a><span class="fu">library</span>(forecast)</span>
+<span id="cb28-2"><a href="pendahuluan.html#cb28-2" tabindex="-1"></a><span class="fu">decompose</span>(otr)</span></code></pre></div>
 <pre><code>## $x
 ##      Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec
 ## 1949 112 118 132 129 121 135 148 148 136 119 104 118

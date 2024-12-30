@@ -274,15 +274,15 @@ Teorema ini berguna untuk mempercepat komputasi <em>least squares</em> dalam kas
 <p>Pengkodean dari data tersebut. Untuk pengkodean seperti ini kita bisa memulai dengan angka awal sebagai angka 0 tersebut. Cara lain adalah dengan cara memberikan angka 0 pada waktu di tengah daripada jumlah data tersebut. Ini berlaku pada yang ganjil saja kalau di waktu tengah ada yang waktu ganjil misalnya jka jumlah data 7 maka nilai yang menjadi angka 0 adalah yang ditengah. Apapun kode ini boleh selama hal itu adalah konsisten. Dalam soal maka kita bisa menunjukkan nilai tersebut.
 Banyak yang harus kau perhatikan dlama penggunaan peramalan seperti ini. Setidaknya d masalah dalam autokorelasi dalam peramalan dengan least suqare seperti ini. Ini terjadi autokorelasi yang terjadi. Pada data time series data yang satu mempunyai hubungan dengan yang lainnya ? (mungkinkah hal ini akan terjadi dengan autokorelasi tersebut.</p>
 <p>Dalam upaya untuk meramal dengan metode least square. kita akan menggunakan data set daripada rstudio yang bernama JOhnsonJOhnson. Dari sini akan kita meregresi dengan waktunya . Jadi waktu itu berkedudukan sebagai variabel X atau variabel bebasnya. kemudian langkah lagi <span class="citation">Zhan (<a href="#ref-RPubs2">2020</a>)</span></p>
-<div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="penggunaan-least-square.html#cb55-1" tabindex="-1"></a><span class="co"># Menambahkan kolom waktu sebagai prediktor</span></span>
-<span id="cb55-2"><a href="penggunaan-least-square.html#cb55-2" tabindex="-1"></a>datajj <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb55-3"><a href="penggunaan-least-square.html#cb55-3" tabindex="-1"></a>  <span class="at">time =</span> <span class="fu">time</span>(JohnsonJohnson),</span>
-<span id="cb55-4"><a href="penggunaan-least-square.html#cb55-4" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">as.numeric</span>(JohnsonJohnson)</span>
-<span id="cb55-5"><a href="penggunaan-least-square.html#cb55-5" tabindex="-1"></a>)</span>
-<span id="cb55-6"><a href="penggunaan-least-square.html#cb55-6" tabindex="-1"></a></span>
-<span id="cb55-7"><a href="penggunaan-least-square.html#cb55-7" tabindex="-1"></a><span class="co"># Model regresi linear</span></span>
-<span id="cb55-8"><a href="penggunaan-least-square.html#cb55-8" tabindex="-1"></a>modellm <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> time, <span class="at">data =</span> datajj)</span>
-<span id="cb55-9"><a href="penggunaan-least-square.html#cb55-9" tabindex="-1"></a><span class="fu">summary</span>(modellm)  <span class="co"># Menampilkan hasil regresi</span></span></code></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="penggunaan-least-square.html#cb36-1" tabindex="-1"></a><span class="co"># Menambahkan kolom waktu sebagai prediktor</span></span>
+<span id="cb36-2"><a href="penggunaan-least-square.html#cb36-2" tabindex="-1"></a>datajj <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb36-3"><a href="penggunaan-least-square.html#cb36-3" tabindex="-1"></a>  <span class="at">time =</span> <span class="fu">time</span>(JohnsonJohnson),</span>
+<span id="cb36-4"><a href="penggunaan-least-square.html#cb36-4" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">as.numeric</span>(JohnsonJohnson)</span>
+<span id="cb36-5"><a href="penggunaan-least-square.html#cb36-5" tabindex="-1"></a>)</span>
+<span id="cb36-6"><a href="penggunaan-least-square.html#cb36-6" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="penggunaan-least-square.html#cb36-7" tabindex="-1"></a><span class="co"># Model regresi linear</span></span>
+<span id="cb36-8"><a href="penggunaan-least-square.html#cb36-8" tabindex="-1"></a>modellm <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> time, <span class="at">data =</span> datajj)</span>
+<span id="cb36-9"><a href="penggunaan-least-square.html#cb36-9" tabindex="-1"></a><span class="fu">summary</span>(modellm)  <span class="co"># Menampilkan hasil regresi</span></span></code></pre></div>
 <pre><code>## 
 ## Call:
 ## lm(formula = y ~ time, data = datajj)
@@ -304,10 +304,8 @@ Banyak yang harus kau perhatikan dlama penggunaan peramalan seperti ini. Setidak
 ## F-statistic: 470.3 on 1 and 82 DF,  p-value: &lt; 2.2e-16</code></pre>
 <p>Dalam least square kita akan memperhatikan beberapa asumsi yakni kemungkinannya ada uji durbin watson yang menunjukkan dari model tersebut. Adanya hubungan ini akan mendpaatkan kemungkinan bias dalam bentuk peramalan</p>
 <p>Solusi adalah melakukan <em>differencing</em> di data yang sudah ada. Biasanya penggunaan differencing satu kali sudah bisa mengatasi masalah autokorelasi.</p>
-<div class="sourceCode" id="cb57"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb57-1"><a href="penggunaan-least-square.html#cb57-1" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span></code></pre></div>
-<pre><code>## Warning: package &#39;lmtest&#39; was built under R version
-## 4.3.1</code></pre>
-<div class="sourceCode" id="cb59"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb59-1"><a href="penggunaan-least-square.html#cb59-1" tabindex="-1"></a><span class="fu">dwtest</span>(modellm)</span></code></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="penggunaan-least-square.html#cb38-1" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb38-2"><a href="penggunaan-least-square.html#cb38-2" tabindex="-1"></a><span class="fu">dwtest</span>(modellm)</span></code></pre></div>
 <pre><code>## 
 ##  Durbin-Watson test
 ## 
@@ -328,8 +326,8 @@ Masalah psikologi karena penerpan sesuatu mungkin akan membuthan waktu untuk pen
 <div id="heterokedatisitas" class="section level2 hasAnchor" number="3.2">
 <h2><span class="header-section-number">3.2</span> Heterokedatisitas<a href="penggunaan-least-square.html#heterokedatisitas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>karena least quare dlah model seperti regresi maka harus melwwati seperti asumsi error yang jumlahnya nol maka kita bisa memeriksanya dengan bptest</p>
-<div class="sourceCode" id="cb61"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb61-1"><a href="penggunaan-least-square.html#cb61-1" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
-<span id="cb61-2"><a href="penggunaan-least-square.html#cb61-2" tabindex="-1"></a><span class="fu">bptest</span>(modellm)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="penggunaan-least-square.html#cb40-1" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb40-2"><a href="penggunaan-least-square.html#cb40-2" tabindex="-1"></a><span class="fu">bptest</span>(modellm)</span></code></pre></div>
 <pre><code>## 
 ##  studentized Breusch-Pagan test
 ## 
@@ -337,15 +335,15 @@ Masalah psikologi karena penerpan sesuatu mungkin akan membuthan waktu untuk pen
 ## BP = 8.5501, df = 1, p-value = 0.003455</code></pre>
 <p>Nilai dari bptest juga menunjukkan tidak menggembirakan karena nilanya lebih rendah dari lima persen atau 0,05 (p&lt;0,05) maka bisa disimpulkan model <em>least square</em> tidak cocok untuk data ini.</p>
 <p>Kemudian kita bisa menguji test normalitas dengan seperti dibawah ini.</p>
-<div class="sourceCode" id="cb63"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb63-1"><a href="penggunaan-least-square.html#cb63-1" tabindex="-1"></a><span class="co"># Histogram residuals</span></span>
-<span id="cb63-2"><a href="penggunaan-least-square.html#cb63-2" tabindex="-1"></a><span class="fu">hist</span>(modellm<span class="sc">$</span>residuals, <span class="at">main =</span> <span class="st">&quot;Histogram of Residuals&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Residuals&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="penggunaan-least-square.html#cb42-1" tabindex="-1"></a><span class="co"># Histogram residuals</span></span>
+<span id="cb42-2"><a href="penggunaan-least-square.html#cb42-2" tabindex="-1"></a><span class="fu">hist</span>(modellm<span class="sc">$</span>residuals, <span class="at">main =</span> <span class="st">&quot;Histogram of Residuals&quot;</span>, <span class="at">xlab =</span> <span class="st">&quot;Residuals&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
-<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="penggunaan-least-square.html#cb64-1" tabindex="-1"></a><span class="co"># QQ Plot</span></span>
-<span id="cb64-2"><a href="penggunaan-least-square.html#cb64-2" tabindex="-1"></a><span class="fu">qqnorm</span>(modellm<span class="sc">$</span>residuals)</span>
-<span id="cb64-3"><a href="penggunaan-least-square.html#cb64-3" tabindex="-1"></a><span class="fu">qqline</span>(modellm<span class="sc">$</span>residuals, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="penggunaan-least-square.html#cb43-1" tabindex="-1"></a><span class="co"># QQ Plot</span></span>
+<span id="cb43-2"><a href="penggunaan-least-square.html#cb43-2" tabindex="-1"></a><span class="fu">qqnorm</span>(modellm<span class="sc">$</span>residuals)</span>
+<span id="cb43-3"><a href="penggunaan-least-square.html#cb43-3" tabindex="-1"></a><span class="fu">qqline</span>(modellm<span class="sc">$</span>residuals, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <p><img src="_main_files/figure-html/unnamed-chunk-12-2.png" width="672" /></p>
-<div class="sourceCode" id="cb65"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb65-1"><a href="penggunaan-least-square.html#cb65-1" tabindex="-1"></a><span class="co"># Uji Shapiro-Wilk</span></span>
-<span id="cb65-2"><a href="penggunaan-least-square.html#cb65-2" tabindex="-1"></a><span class="fu">shapiro.test</span>(modellm<span class="sc">$</span>residuals)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="penggunaan-least-square.html#cb44-1" tabindex="-1"></a><span class="co"># Uji Shapiro-Wilk</span></span>
+<span id="cb44-2"><a href="penggunaan-least-square.html#cb44-2" tabindex="-1"></a><span class="fu">shapiro.test</span>(modellm<span class="sc">$</span>residuals)</span></code></pre></div>
 <pre><code>## 
 ##  Shapiro-Wilk normality test
 ## 
